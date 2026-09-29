@@ -82,6 +82,7 @@ verified_at: 2026-09-29
 3. [[../advanced-topics/rag-agent]]
 4. [[../advanced-topics/system-integration]]
 5. [[../cases/case-catalog]]
+6. [[../modern-rag/modern-rag]] — 学习原手册之外的方法，但保持来源边界
 
 **完成标准**：面对新业务时，不是复制某个案例配置，而是能明确约束、设计实验并写 Decision Record。
 
