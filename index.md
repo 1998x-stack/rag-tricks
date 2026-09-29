@@ -1,55 +1,148 @@
 ---
 layout: default
-title: 字节跳动 RAG 实践手册 Wiki
-description: 从《字节跳动 RAG 实践手册》(118页) 中提取、分类、深化的结构化知识库
+title: RAG Tricks · RAG 工程知识库
+description: 可追溯、可验证、面向生产实践的 RAG 工程知识库
 ---
 
-# 字节跳动 RAG 实践手册 Wiki
+# RAG Tricks
 
-> 覆盖从数据处理、索引构建、检索策略到生成优化的全链路 RAG 方法论 — 62 个页面，10 大类别
+> 从“资料整理”升级为“工程决策手册”：学习概念、设计系统、排查问题、理解权衡，并尽可能追溯每个关键结论的来源。
 
-## 快速入口
+## 你现在想做什么？
 
-### 核心架构
-
-| 类别 | 描述 |
-|------|------|
-| [引言与概述](./wiki/introduction/introduction.md) | RAG基本原理, RAG vs Fine-tuning vs IR, 字节业务应用现状 |
-| [系统架构设计](./wiki/architecture/architecture.md) | 四层架构: 数据层+索引层+检索层+生成层 |
-| [数据处理与准备](./wiki/data-layer/data-layer.md) | 数据收集清洗, 文本预处理, 数据增强, 标注分类, 安全隐私 |
-| [索引构建与优化](./wiki/indexing/indexing.md) | 嵌入模型选型, 向量生成策略, 向量数据库, 性能优化, 质量评估 |
-| [检索策略与实现](./wiki/retrieval/retrieval.md) | 检索触发, 查询理解, 语义/关键词/混合检索, 结果处理, 效果评估 |
-| [生成层设计与优化](./wiki/generation/generation.md) | 模型选型, Prompt Engineering, 质量控制, 效率与成本优化 |
-
-### 实践落地
-
-| 类别 | 描述 |
-|------|------|
-| [业务线落地案例](./wiki/business-cases/business-cases.md) | 抖音电商, 飞书知识库, 金融科技, 剪映脚本生成 |
-| [运维与可靠性](./wiki/ops-and-reliability/ops-and-reliability.md) | 全链路监控, 自动化运维, 应急响应, 性能压测, 技术复用, 跨地域部署, 故障复盘 |
-| [成本与效率](./wiki/cost-and-efficiency/cost-and-efficiency.md) | 成本构成拆解, 优化策略, 监控归因, 效率极致优化 |
-
-### 高级专题
-
-| 类别 | 描述 |
-|------|------|
-| [高级专题](./wiki/advanced-topics/advanced-topics.md) | 多模态RAG, RAG-Agent集成, 隐私安全, 系统集成, 新手入门, 总结展望 |
-
-### 专题
-
-| 页面 | 描述 |
-|------|------|
-| [矛盾观点汇总](./contradictory.md) | 多组设计权衡、业务分歧及分析 |
+| 目标 | 入口 |
+|---|---|
+| **Learn**：系统学习 RAG | [学习路径](#学习路径) |
+| **Build**：设计生产 RAG | [系统架构设计](./wiki/architecture/architecture.md) |
+| **Debug**：排查效果/性能问题 | [问题排查入口](#问题排查入口) |
+| **Decide**：做技术选型 | [设计权衡中心](./contradictory.md) |
+| **Verify**：核验来源和证据 | [来源与证据规范](./SOURCE_POLICY.md) |
 
 ---
 
-## 关于本项目
+## 学习路径
 
-本知识库使用 [Obsidian](https://obsidian.md) 风格的双向链接（`[[wikilinks]]`）构建，推荐在 Obsidian 中作为 Vault 打开以获得最佳浏览体验。
+推荐按端到端链路学习，而不是按文件数量浏览：
 
-- **62 个 Markdown 文件** — 10 个主页面 + 52 个知识点深度页面
-- **200+ 交叉引用** — 连接相关知识，构建知识网络
-- **全中文内容** — 保留原始技术术语和行业表达
-- **来源可追溯** — 内容来源于《字节跳动 RAG 实践手册》(118页 PDF)
+1. [RAG 基础](./wiki/introduction/rag-basics.md)
+2. [整体架构](./wiki/architecture/overview.md)
+3. [数据处理](./wiki/data-layer/data-layer.md)
+4. [索引构建](./wiki/indexing/indexing.md)
+5. [检索策略](./wiki/retrieval/retrieval.md)
+6. [生成优化](./wiki/generation/generation.md)
+7. [评估与质量](./wiki/retrieval/retrieval-evaluation.md)
+8. [运维与可靠性](./wiki/ops-and-reliability/ops-and-reliability.md)
+9. [成本与效率](./wiki/cost-and-efficiency/cost-and-efficiency.md)
+10. [高级专题](./wiki/advanced-topics/advanced-topics.md)
 
-[GitHub 仓库](https://github.com/1998x-stack/rag-tricks) · [矛盾观点](./contradictory.md) · [原始素材](./raw/字节跳动%20RAG%20实践手册.pdf)
+---
+
+## 问题排查入口
+
+### 召回率低 / 找不到正确内容
+
+优先检查：
+
+- [文本预处理](./wiki/data-layer/text-preprocessing.md)
+- [嵌入模型选型](./wiki/indexing/embedding-model-selection.md)
+- [向量生成策略](./wiki/indexing/vector-generation-strategy.md)
+- [查询理解](./wiki/retrieval/query-understanding.md)
+- [混合检索](./wiki/retrieval/hybrid-retrieval.md)
+- [检索评估](./wiki/retrieval/retrieval-evaluation.md)
+
+### 回答相关但不可信 / 幻觉高
+
+优先检查：
+
+- [检索结果处理](./wiki/retrieval/result-processing.md)
+- [Prompt Engineering](./wiki/generation/prompt-engineering.md)
+- [生成质量控制](./wiki/generation/generation-quality.md)
+- [生成评估](./wiki/generation/generation-evaluation.md)
+
+### 延迟高 / 成本高
+
+优先检查：
+
+- [索引性能优化](./wiki/indexing/index-performance-optimization.md)
+- [生成效率](./wiki/generation/generation-efficiency.md)
+- [成本拆解](./wiki/cost-and-efficiency/cost-breakdown.md)
+- [成本优化](./wiki/cost-and-efficiency/cost-optimization.md)
+- [性能压测](./wiki/ops-and-reliability/performance-testing.md)
+
+### 知识更新后仍检索不到
+
+优先检查：
+
+- [数据收集与清洗](./wiki/data-layer/data-collection-cleaning.md)
+- [向量数据库](./wiki/indexing/vector-database.md)
+- [自动化运维](./wiki/ops-and-reliability/automated-ops.md)
+- [全链路监控](./wiki/ops-and-reliability/full-stack-monitoring.md)
+
+---
+
+## 主题地图
+
+### 基础与架构
+
+| 类别 | 描述 |
+|---|---|
+| [引言与概述](./wiki/introduction/introduction.md) | 原理、技术边界、业务场景 |
+| [系统架构设计](./wiki/architecture/architecture.md) | 数据、索引、检索、生成及端到端设计 |
+| [数据处理与准备](./wiki/data-layer/data-layer.md) | 清洗、预处理、增强、标注、安全 |
+
+### 检索与生成
+
+| 类别 | 描述 |
+|---|---|
+| [索引构建与优化](./wiki/indexing/indexing.md) | Embedding、向量、索引、质量 |
+| [检索策略与实现](./wiki/retrieval/retrieval.md) | Query、Sparse/Dense/Hybrid、结果处理 |
+| [生成层设计与优化](./wiki/generation/generation.md) | 模型、Prompt、质量、效率 |
+
+### 生产化
+
+| 类别 | 描述 |
+|---|---|
+| [业务线落地案例](./wiki/business-cases/business-cases.md) | 案例与场景化实践 |
+| [运维与可靠性](./wiki/ops-and-reliability/ops-and-reliability.md) | 监控、响应、压测、复盘 |
+| [成本与效率](./wiki/cost-and-efficiency/cost-and-efficiency.md) | 成本模型与优化 |
+| [高级专题](./wiki/advanced-topics/advanced-topics.md) | 多模态、Agent、隐私与集成 |
+
+---
+
+## 设计权衡中心
+
+RAG 中很少存在脱离上下文的“唯一最优解”。现有 [设计权衡汇总](./contradictory.md) 记录了包括以下问题在内的多组选择：
+
+- 语义检索 vs 关键词检索；
+- 大模型 vs 小模型；
+- 实时索引 vs 批量构建；
+- 固定分块 vs 语义分块；
+- 全文上下文 vs 上下文压缩；
+- GPU 独占 vs 资源共享。
+
+后续会把这些条目升级为“约束 → 方案 → 指标 → 风险 → 实验”的决策记录。
+
+---
+
+## 来源与证据
+
+历史内容来自《字节跳动 RAG 实践手册》的提取、整理与扩写，但“出现在本仓库”不等价于“已经独立验证”。
+
+涉及精确数字、事故时间、成本、QPS、内部组件名或业务规模的内容，引用前请先检查：
+
+- [来源与证据规范](./SOURCE_POLICY.md)
+- [高风险页面核验登记](./sources/source-map.json)
+
+当前历史页面仍处于逐步审计阶段。
+
+---
+
+## 浏览说明
+
+仓库正文大量使用 Obsidian `[[wikilinks]]`。Obsidian 中可以获得较完整的知识网络体验；当前 GitHub Pages 使用 Jekyll Cayman，并不能原生渲染全部 wikilink/backlink。
+
+因此本站导航入口优先使用标准 Markdown 链接，同时保留原有 Obsidian 链接兼容性。站点框架升级列入后续路线图。
+
+---
+
+[GitHub 仓库](https://github.com/1998x-stack/rag-tricks) · [贡献指南](./CONTRIBUTING.md) · [来源规范](./SOURCE_POLICY.md)
