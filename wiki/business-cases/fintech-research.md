@@ -1,4 +1,26 @@
+---
+title: 金融科技：研报解读与投资问答
+type: case
+evidence: partial
+verified_at: 2026-09-29
+source_refs:
+  - source-manual
+---
+
 # 金融科技：研报解读与投资问答
+
+## Case Metadata
+
+| 字段 | 内容 |
+|---|---|
+| Evidence | Partial / Source-reported |
+| Source scope | 《字节跳动 RAG 实践手册》OCR 页标 50–53 |
+| Workload | 研报解析、金融检索、实时数据关联、风险提示 |
+| Reproduction | Not reproduced in this repository |
+| Portability | 仅可迁移方法与约束，不直接迁移数值门槛 |
+
+> **Benchmark 边界：** 页面中的事实准确率、客户规模、效率与收入数据属于来源材料案例；仓库未提供可复现实验环境。 引用这些数字时请同时说明来源场景与复现状态。
+
 
 ## 是什么
 
@@ -130,6 +152,17 @@ ByteVectorDB + 时序数据库 ByteTimeDB 混合存储。
 **术语归一化缺失**：用户可能使用非标准化表述，应构建术语词典进行转换。
 **观点冲突处理不当**：不同机构可能有相反观点，应标注差异并分析原因。
 **忽视风险提示**：投资决策回答缺乏风险提示可能导致重大损失。
+
+## 来源与证据
+
+- Evidence: Partial / Source-reported
+- Source: 《字节跳动 RAG 实践手册》原始抽取文本
+- OCR 页标: 50–53
+- Reproduction status: Not reproduced
+- Benchmark policy: [[../benchmarks/benchmark-standard]]
+- Case catalog: [[../cases/case-catalog]]
+
+> 本页验证的是“案例与主要数字可在来源材料中定位”；不代表仓库对企业内部生产数据做了独立外部认证。
 
 ## 参见
 
