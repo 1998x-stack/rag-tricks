@@ -1,15 +1,40 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This repository is a Chinese RAG engineering knowledge base. It originated from a structured extraction of 《字节跳动 RAG 实践手册》 and is evolving into an evidence-aware engineering handbook.
 
-## Repository purpose
+## Primary goals
 
-Structured Obsidian wiki of ByteDance RAG (Retrieval-Augmented Generation) practices extracted from 《字节跳动 RAG 实践手册》(118-page PDF). 62 Markdown files across 10 category directories, all in Chinese, cross-linked with `[[wikilinks]]`.
+When editing the repository, optimize for:
+
+1. factual traceability;
+2. useful engineering decisions;
+3. maintainable navigation and links;
+4. explicit tradeoffs and applicability boundaries;
+5. testable content quality.
+
+Do not optimize only for prose polish.
+
+## Evidence model
+
+Every material technical claim should be understood as one of:
+
+- **Source** — directly supported by an identifiable source passage.
+- **Synthesis** — structured summary of one or more sources without adding a new key factual claim.
+- **Derived** — engineering inference, recommendation, or design proposal.
+- **External** — material from outside the original manual with an explicit source.
+- **Unverified** — historical content not yet audited.
+
+Never convert a Derived or Unverified statement into a Source statement merely by rewriting it more confidently.
+
+High-risk claims include precise percentages, QPS, latency, cost, dates of incidents, business scale, internal component names, and statements about what a specific company “uses”, “defaults to”, or “achieved”.
+
+See `SOURCE_POLICY.md` and `sources/source-map.json`.
 
 ## Content conventions
 
-**Every deep-dive page** follows this 5-section structure:
-```
+Existing deep-dive pages commonly follow:
+
+```text
 # <名称>
 ## 是什么
 ## 为什么重要
@@ -18,33 +43,95 @@ Structured Obsidian wiki of ByteDance RAG (Retrieval-Augmented Generation) pract
 ## 参见
 ```
 
-**Every main category page** follows:
+This structure is no longer mandatory for every page type. Prefer the structure that fits the content:
+
+- Concept
+- Pattern
+- Decision
+- Playbook
+- Case
+- Benchmark
+- Failure
+- Tradeoff
+- Checklist
+- Glossary
+
+For decision/tradeoff pages, explicitly include constraints, alternatives, evaluation dimensions, risks, and validation experiments when possible.
+
+## Links
+
+The repository currently supports two audiences:
+
+- Obsidian users: `[[wikilinks]]` are allowed.
+- GitHub / Pages users: important navigation paths should also use standard Markdown links.
+
+Do not assume Jekyll Cayman renders Obsidian wikilinks.
+
+For important entry pages such as `README.md` and `index.md`, prefer standard Markdown links.
+
+## Adding or changing factual content
+
+Before adding a precise factual claim:
+
+1. identify whether it is Source / Synthesis / Derived / External / Unverified;
+2. add source details when available;
+3. avoid inventing page numbers or citations;
+4. include scope and measurement context for metrics;
+5. distinguish illustrative examples from documented historical incidents.
+
+If a source cannot yet be located, mark the claim as requiring verification instead of fabricating provenance.
+
+## Quality checks
+
+Run:
+
+```bash
+python3 scripts/quality_check.py
 ```
-# <类别名>
-## 概述
-## 详细知识 (bullet index of sub-pages with one-line descriptions)
-## 核心实践 (table: 实践 | 场景 | 要点 | 参见)
+
+The checker currently:
+
+- validates standard relative Markdown links;
+- validates `sources/source-map.json`;
+- warns about unresolved Obsidian wikilinks;
+- warns about duplicate H1 titles;
+- warns when numerically dense pages have no `来源与证据` section.
+
+Warnings represent migration debt; newly edited pages should avoid introducing additional warnings.
+
+## Repository structure
+
+```text
+rag-tricks/
+├── README.md
+├── index.md
+├── SOURCE_POLICY.md
+├── CONTRIBUTING.md
+├── contradictory.md
+├── wiki/
+├── sources/
+│   └── source-map.json
+├── scripts/
+│   └── quality_check.py
+├── .github/workflows/
+│   └── content-quality.yml
+└── raw/
 ```
 
-**Language**: All content in Chinese. Preserve original technical terminology from the source PDF.
+## Raw source material
 
-**Source**: Content paraphrased from `raw/字节跳动 RAG 实践手册.pdf` — no original author attribution needed (single-company manual, not crowdsourced tips).
+Files under `raw/` may have independent copyright or redistribution constraints. Do not infer redistribution permission from the fact that a file is already in the repository. Do not add new third-party source files without checking provenance and permission.
 
-## Wiki-link conventions
+## Long-term direction
 
-- Same-directory links: `[[page-name]]` (no `.md` extension)
-- Cross-category links: `[[../category/page-name]]`
-- Root-level links: `[[../../contradictory]]`, `[[../../index]]`
-- Architecture/model/product names (`ByteVectorDB`, `Milvus`, `HNSW`, `BERT`, `ByteBM25`, `云雀`) are acceptable red links
+The intended information architecture is:
 
-## Adding new content
+```text
+Learn  → concepts and learning paths
+Build  → system design and implementation patterns
+Debug  → symptom-driven troubleshooting
+Decide → tradeoffs and technical decisions
+Verify → provenance, evidence, and measurement context
+```
 
-1. New deep-dive page → place in the matching category directory, follow 5-section format
-2. New main category → create directory + main page, add to `index.md` nav table and `README.md`
-3. New practices → add to the relevant main page under `## 核心实践` in the table format
-4. New contradictions → add to `contradictory.md` following the existing entry format (table + analysis)
-5. After adding pages, scan for orphan `[[wikilinks]]` and resolve them
-
-## GitHub Pages
-
-Site hosted at `1998x-stack.github.io/rag-tricks/` via Jekyll + Cayman theme. Config in `_config.yml`. Entry point is `index.md`. Pages rebuild on push to `main`.
+Future site work should preserve Obsidian compatibility while making wikilinks, backlinks, search, and knowledge graph navigation work on the web.
