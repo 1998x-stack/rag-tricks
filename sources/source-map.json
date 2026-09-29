@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "statuses": [
+    "verified",
+    "partial",
+    "needs_verification",
+    "derived",
+    "external"
+  ],
+  "sources": {
+    "source-manual": {
+      "title": "字节跳动 RAG 实践手册",
+      "kind": "primary-material",
+      "redistribution_status": "unknown",
+      "note": "仓库内存在 PDF 与全文抽取；具体发布来源与再分发授权仍需独立核验。"
+    }
+  },
+  "pages": {
+    "contradictory.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "high",
+      "reason": "包含大量精确指标、默认策略与业务实践结论。"
+    },
+    "wiki/introduction/bytedance-rag-applications.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "high",
+      "reason": "包含业务规模、QPS、NRT 延迟、内部组件名称等高风险 Claim。"
+    },
+    "wiki/ops-and-reliability/failure-postmortem.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "critical",
+      "reason": "包含精确事故日期、地点、影响、恢复时长与内部系统名称。"
+    },
+    "wiki/cost-and-efficiency/cost-optimization.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "critical",
+      "reason": "包含精确成本、降本比例、资源利用率与系统配置数据。"
+    },
+    "wiki/advanced-topics/future-outlook.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "high",
+      "reason": "包含用户/企业规模、峰值 QPS、效果提升与内部组件体系描述。"
+    },
+    "wiki/architecture/overview.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "包含公司级标准架构、默认参数与当前部署方式等表述。"
+    }
+  }
+}
