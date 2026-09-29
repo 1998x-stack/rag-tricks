@@ -113,7 +113,7 @@ rag-tricks/
 2. 为核心页面补齐来源页码/证据类型；
 3. 建立 Evaluation 一级知识模块；
 4. 将“目录式 Wiki”升级为 Learn / Build / Debug / Decide 四类入口；
-5. 迁移到能够正确渲染 wikilink、backlink、搜索与知识图谱的站点框架。
+5. 持续优化 Quartz 站点的信息架构、搜索与知识图谱体验。
 
 ## 版权与来源说明
 
