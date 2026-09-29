@@ -1,8 +1,25 @@
+---
+title: 业务落地案例
+type: hub
+evidence: synthesis
+verified_at: 2026-09-29
+source_refs:
+  - source-manual
+---
+
 # 业务落地案例
 
 ## 概述
 
 RAG 技术在字节跳动各业务线已实现规模化落地，覆盖智能客服、知识库问答、金融研报分析、视频创意辅助等核心场景。本章选取抖音电商、飞书、金融科技、剪映四个典型业务线，详细阐述 RAG 的落地流程、关键优化点与量化业务效果，为其他业务线提供可复用的实践参考。
+
+## 案例使用规则
+
+本目录中的数字属于来源材料的 **Source-reported** 案例结果，除非另有明确复现实验记录，否则不应作为跨业务通用 benchmark。
+
+- 统一案例目录：[[../cases/case-catalog]]
+- Benchmark 规范：[[../benchmarks/benchmark-standard]]
+- 评估方法：[[../evaluation/evaluation]]
 
 ## 详细知识
 
