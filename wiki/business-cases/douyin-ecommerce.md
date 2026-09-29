@@ -1,4 +1,26 @@
+---
+title: 抖音电商：智能客服与商品问答
+type: case
+evidence: partial
+verified_at: 2026-09-29
+source_refs:
+  - source-manual
+---
+
 # 抖音电商：智能客服与商品问答
+
+## Case Metadata
+
+| 字段 | 内容 |
+|---|---|
+| Evidence | Partial / Source-reported |
+| Source scope | 《字节跳动 RAG 实践手册》OCR 页标 44–47 |
+| Workload | 电商客服、商品问答、售后政策、高峰流量 |
+| Reproduction | Not reproduced in this repository |
+| Portability | 仅可迁移方法与约束，不直接迁移数值门槛 |
+
+> **Benchmark 边界：** 页面中的响应时间、满意度、成本、QPS 等为来源材料报告值，当前仓库未复现实验。 引用这些数字时请同时说明来源场景与复现状态。
+
 
 ## 是什么
 
@@ -128,6 +150,17 @@ RAG 系统上线后，年节省成本超 2 亿元，
 **缺乏质量监控**：
 错误回答直接影响用户体验和品牌声誉。
 必须建立实时质量控制机制。
+
+## 来源与证据
+
+- Evidence: Partial / Source-reported
+- Source: 《字节跳动 RAG 实践手册》原始抽取文本
+- OCR 页标: 44–47
+- Reproduction status: Not reproduced
+- Benchmark policy: [[../benchmarks/benchmark-standard]]
+- Case catalog: [[../cases/case-catalog]]
+
+> 本页验证的是“案例与主要数字可在来源材料中定位”；不代表仓库对企业内部生产数据做了独立外部认证。
 
 ## 参见
 

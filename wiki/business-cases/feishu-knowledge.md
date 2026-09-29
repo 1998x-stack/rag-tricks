@@ -1,4 +1,26 @@
+---
+title: 飞书：知识库问答与文档助手
+type: case
+evidence: partial
+verified_at: 2026-09-29
+source_refs:
+  - source-manual
+---
+
 # 飞书：知识库问答与文档助手
+
+## Case Metadata
+
+| 字段 | 内容 |
+|---|---|
+| Evidence | Partial / Source-reported |
+| Source scope | 《字节跳动 RAG 实践手册》OCR 页标 47–50 |
+| Workload | 企业知识库、文档解析、多粒度检索、权限问答 |
+| Reproduction | Not reproduced in this repository |
+| Portability | 仅可迁移方法与约束，不直接迁移数值门槛 |
+
+> **Benchmark 边界：** 页面中的召回率、延迟、文档规模和效率指标为来源材料报告值，不能跨 corpus 直接比较。 引用这些数字时请同时说明来源场景与复现状态。
+
 
 ## 是什么
 
@@ -137,6 +159,17 @@ OCR 识别准确率 99.2%，
 长文档检索结果过多直接传入生成模型
 会导致模型注意力分散。
 应进行相关性排序，仅保留 3-5 个核心片段。
+
+## 来源与证据
+
+- Evidence: Partial / Source-reported
+- Source: 《字节跳动 RAG 实践手册》原始抽取文本
+- OCR 页标: 47–50
+- Reproduction status: Not reproduced
+- Benchmark policy: [[../benchmarks/benchmark-standard]]
+- Case catalog: [[../cases/case-catalog]]
+
+> 本页验证的是“案例与主要数字可在来源材料中定位”；不代表仓库对企业内部生产数据做了独立外部认证。
 
 ## 参见
 

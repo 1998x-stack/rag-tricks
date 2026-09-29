@@ -21,6 +21,16 @@ SOURCE_MAP = ROOT / "sources" / "source-map.json"
 MARKDOWN_LINK_RE = re.compile(r"(?<!!)\[[^\]]+\]\(([^)]+)\)")
 WIKILINK_RE = re.compile(r"\[\[([^\]]+)\]\]")
 H1_RE = re.compile(r"^#\s+(.+?)\s*$", re.MULTILINE)
+STRICT_FRONTMATTER_PREFIXES = (
+    "wiki/evaluation/",
+    "wiki/decisions/",
+    "wiki/production/",
+    "wiki/cases/",
+    "wiki/benchmarks/",
+    "wiki/business-cases/",
+)
+REQUIRED_FRONTMATTER_KEYS = ("title", "type", "evidence", "verified_at")
+
 NUMERIC_CLAIM_RE = re.compile(
     r"(?:\d+(?:\.\d+)?\s*%|\bQPS\b|\bP(?:50|95|99)\b|"
     r"\d+(?:\.\d+)?\s*(?:ms|毫秒|秒|分钟|小时|万|亿|GB|MB|TB))",
@@ -135,6 +145,40 @@ def check_numeric_claims(files: list[Path], warnings: list[str]) -> None:
         )
 
 
+def parse_frontmatter(text: str) -> dict[str, str]:
+    if not text.startswith("---\n"):
+        return {}
+    end = text.find("\n---\n", 4)
+    if end == -1:
+        return {}
+    data: dict[str, str] = {}
+    for line in text[4:end].splitlines():
+        if not line or line.startswith((" ", "\t", "#")) or ":" not in line:
+            continue
+        key, value = line.split(":", 1)
+        data[key.strip()] = value.strip()
+    return data
+
+
+def check_content_schema(files: list[Path], errors: list[str]) -> None:
+    for path in files:
+        relative = rel(path)
+        if not relative.startswith(STRICT_FRONTMATTER_PREFIXES):
+            continue
+        text = path.read_text(encoding="utf-8")
+        metadata = parse_frontmatter(text)
+        if not metadata:
+            errors.append(f"missing frontmatter: {relative}")
+            continue
+        missing = [key for key in REQUIRED_FRONTMATTER_KEYS if not metadata.get(key)]
+        if missing:
+            errors.append(f"missing frontmatter keys in {relative}: {', '.join(missing)}")
+        if metadata.get("type") == "case":
+            if "## Case Metadata" not in text:
+                errors.append(f"case missing Case Metadata section: {relative}")
+            if "## 来源与证据" not in text:
+                errors.append(f"case missing 来源与证据 section: {relative}")
+
 def check_source_map(errors: list[str]) -> None:
     if not SOURCE_MAP.exists():
         errors.append("missing sources/source-map.json")
@@ -176,6 +220,7 @@ def main() -> int:
     check_wikilinks(files, warnings)
     check_duplicate_titles(files, warnings)
     check_numeric_claims(files, warnings)
+    check_content_schema(files, errors)
     check_source_map(errors)
 
     print(f"Checked {len(files)} Markdown files.")

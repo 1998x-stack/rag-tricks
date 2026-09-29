@@ -1,4 +1,26 @@
+---
+title: 剪映：视频脚本生成与创意辅助
+type: case
+evidence: partial
+verified_at: 2026-09-29
+source_refs:
+  - source-manual
+---
+
 # 剪映：视频脚本生成与创意辅助
+
+## Case Metadata
+
+| 字段 | 内容 |
+|---|---|
+| Evidence | Partial / Source-reported |
+| Source scope | 《字节跳动 RAG 实践手册》OCR 页标 53–56 |
+| Workload | 创意脚本、素材匹配、跨模态检索、行业规则 |
+| Reproduction | Not reproduced in this repository |
+| Portability | 仅可迁移方法与约束，不直接迁移数值门槛 |
+
+> **Benchmark 边界：** 页面中的用户规模、播放量、素材使用率和创作效率属于来源材料报告值，不作为通用产品 benchmark。 引用这些数字时请同时说明来源场景与复现状态。
+
 
 ## 是什么
 
@@ -129,6 +151,17 @@ ByteVectorDB + 素材索引库架构。
 **忽略领域差异**：应针对不同领域构建规则库，适配差异化的脚本结构。
 **创意僵化**：仅检索同领域脚本导致同质化，应通过跨领域创意迁移突破瓶颈。
 **过度依赖大模型**：应选用创意领域微调的中等模型配合检索增强来保证质量。
+
+## 来源与证据
+
+- Evidence: Partial / Source-reported
+- Source: 《字节跳动 RAG 实践手册》原始抽取文本
+- OCR 页标: 53–56
+- Reproduction status: Not reproduced
+- Benchmark policy: [[../benchmarks/benchmark-standard]]
+- Case catalog: [[../cases/case-catalog]]
+
+> 本页验证的是“案例与主要数字可在来源材料中定位”；不代表仓库对企业内部生产数据做了独立外部认证。
 
 ## 参见
 
