@@ -47,8 +47,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: npm
-          cache-dependency-path: site/quartz-package-lock.json
 
       - name: Fetch pinned Quartz engine
         run: |
