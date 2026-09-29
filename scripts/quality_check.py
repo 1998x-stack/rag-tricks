@@ -30,6 +30,7 @@ STRICT_FRONTMATTER_PREFIXES = (
     "wiki/business-cases/",
     "wiki/learning/",
     "wiki/glossary/",
+    "wiki/modern-rag/",
 )
 REQUIRED_FRONTMATTER_KEYS = ("title", "type", "evidence", "verified_at")
 
