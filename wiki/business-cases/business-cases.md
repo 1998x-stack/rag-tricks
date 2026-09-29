@@ -49,3 +49,11 @@ RAG 技术在字节跳动各业务线已实现规模化落地，覆盖智能客�
 - **场景**：剪映3亿用户的视频脚本生成、素材匹配、创意迁移
 - **要点**：脚本结构化 → 跨模态检索 → 行业规则适配 → 爆款创意迁移
 - **参见**：[[jianying-script]]、[[../advanced-topics/multimodal-rag]]
+
+## 来源与证据
+
+- Evidence: Synthesis
+- Source: 《字节跳动 RAG 实践手册》业务案例章节
+- OCR 页标: 44–56
+- 四个子案例的数字属于 Source-reported；复现状态见各自 Case Metadata。
+- Benchmark policy: [[../benchmarks/benchmark-standard]]
