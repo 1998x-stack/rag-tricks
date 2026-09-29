@@ -57,6 +57,10 @@
 - **用户满意度的置信度问题**：主动打分的用户往往是有强烈情绪（极满意或极不满）的，沉默用户占多数。需要结合 CTR、停留时间等行为指标综合判断。
 - **成本指标与质量指标的冲突**：降低模型参数量可降低成本但可能降低质量。需要设定"质量不降级"的硬约束（如事实准确率下降不得超过 2%），在此约束下优化成本。
 
+## 与 Evaluation Center 的关系
+
+本页保留来源手册中的生成评估实践。Groundedness、completeness、citation correctness、端到端回归等统一方法见 [[../evaluation/evaluation]] 与 [[../evaluation/generation-metrics]]。
+
 ## 参见
 
 - [[generation-quality]] — 质量指标的定义和采集方式在质量控制中详细说明

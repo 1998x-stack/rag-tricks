@@ -15,6 +15,7 @@ description: 可追溯、可验证、面向生产实践的 RAG 工程知识库
 | **Learn**：系统学习 RAG | [学习路径](#学习路径) |
 | **Build**：设计生产 RAG | [系统架构设计](./wiki/architecture/architecture.md) |
 | **Debug**：排查效果/性能问题 | [问题排查入口](#问题排查入口) |
+| **Evaluate**：建立评估与回归体系 | [Evaluation Center](./wiki/evaluation/evaluation.md) |
 | **Decide**：做技术选型 | [设计权衡中心](./contradictory.md) |
 | **Verify**：核验来源和证据 | [来源与证据规范](./SOURCE_POLICY.md) |
 
@@ -30,7 +31,7 @@ description: 可追溯、可验证、面向生产实践的 RAG 工程知识库
 4. [索引构建](./wiki/indexing/indexing.md)
 5. [检索策略](./wiki/retrieval/retrieval.md)
 6. [生成优化](./wiki/generation/generation.md)
-7. [评估与质量](./wiki/retrieval/retrieval-evaluation.md)
+7. [Evaluation Center](./wiki/evaluation/evaluation.md)
 8. [运维与可靠性](./wiki/ops-and-reliability/ops-and-reliability.md)
 9. [成本与效率](./wiki/cost-and-efficiency/cost-and-efficiency.md)
 10. [高级专题](./wiki/advanced-topics/advanced-topics.md)
@@ -97,6 +98,7 @@ description: 可追溯、可验证、面向生产实践的 RAG 工程知识库
 | [索引构建与优化](./wiki/indexing/indexing.md) | Embedding、向量、索引、质量 |
 | [检索策略与实现](./wiki/retrieval/retrieval.md) | Query、Sparse/Dense/Hybrid、结果处理 |
 | [生成层设计与优化](./wiki/generation/generation.md) | 模型、Prompt、质量、效率 |
+| [Evaluation Center](./wiki/evaluation/evaluation.md) | 数据集、指标、端到端评估、回归与线上验证 |
 
 ### 生产化
 
@@ -139,9 +141,7 @@ RAG 中很少存在脱离上下文的“唯一最优解”。现有 [设计权�
 
 ## 浏览说明
 
-仓库正文大量使用 Obsidian `[[wikilinks]]`。Obsidian 中可以获得较完整的知识网络体验；当前 GitHub Pages 使用 Jekyll Cayman，并不能原生渲染全部 wikilink/backlink。
-
-因此本站导航入口优先使用标准 Markdown 链接，同时保留原有 Obsidian 链接兼容性。站点框架升级列入后续路线图。
+仓库正文大量使用 Obsidian `[[wikilinks]]`。Quartz 构建已加入工程分支，为 Web 端提供 wikilink、backlink、搜索、Explorer 与知识图谱；标准 Markdown 链接仍保留以保证 GitHub 原生浏览兼容。
 
 ---
 

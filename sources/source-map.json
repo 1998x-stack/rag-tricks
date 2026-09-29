@@ -13,6 +13,20 @@
       "kind": "primary-material",
       "redistribution_status": "unknown",
       "note": "仓库内存在 PDF 与全文抽取；具体发布来源与再分发授权仍需独立核验。"
+    },
+    "external-ms-rag-evaluators": {
+      "title": "Microsoft Foundry · RAG evaluators",
+      "kind": "external-documentation",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/evaluation-evaluators/rag-evaluators",
+      "verified_at": "2026-09-29",
+      "note": "用于 groundedness、relevance、completeness 与 retrieval process evaluation 的外部参考。"
+    },
+    "external-ms-rag-retrieval": {
+      "title": "Azure Architecture Center · RAG information retrieval evaluation",
+      "kind": "external-documentation",
+      "url": "https://learn.microsoft.com/azure/architecture/ai-ml/guide/rag/rag-information-retrieval",
+      "verified_at": "2026-09-29",
+      "note": "用于 Precision@K、Recall@K、MRR 等经典检索指标的外部参考。"
     }
   },
   "pages": {
@@ -80,6 +94,60 @@
       ],
       "priority": "medium",
       "reason": "包含公司级标准架构、默认参数与当前部署方式等表述。"
+    },
+    "wiki/evaluation/evaluation.md": {
+      "status": "external",
+      "source_refs": [
+        "external-ms-rag-evaluators",
+        "external-ms-rag-retrieval"
+      ],
+      "priority": "normal",
+      "reason": "分层评估中心；外部标准定义 + 仓库工程化整理。"
+    },
+    "wiki/evaluation/evaluation-dataset.md": {
+      "status": "derived",
+      "source_refs": [
+        "external-ms-rag-retrieval"
+      ],
+      "priority": "normal",
+      "reason": "基于可复现评估需求设计的数据契约。"
+    },
+    "wiki/evaluation/retrieval-metrics.md": {
+      "status": "external",
+      "source_refs": [
+        "external-ms-rag-retrieval"
+      ],
+      "priority": "normal",
+      "reason": "经典 IR 指标定义与 RAG 场景解释。"
+    },
+    "wiki/evaluation/generation-metrics.md": {
+      "status": "external",
+      "source_refs": [
+        "external-ms-rag-evaluators"
+      ],
+      "priority": "normal",
+      "reason": "Groundedness、relevance、completeness 等生成评估维度。"
+    },
+    "wiki/evaluation/end-to-end-evaluation.md": {
+      "status": "derived",
+      "source_refs": [
+        "external-ms-rag-evaluators",
+        "external-ms-rag-retrieval"
+      ],
+      "priority": "normal",
+      "reason": "质量/延迟/成本/可靠性的端到端工程框架。"
+    },
+    "wiki/evaluation/regression-testing.md": {
+      "status": "derived",
+      "source_refs": [],
+      "priority": "normal",
+      "reason": "将软件回归门禁应用于 RAG 多组件版本系统。"
+    },
+    "wiki/evaluation/online-evaluation.md": {
+      "status": "derived",
+      "source_refs": [],
+      "priority": "normal",
+      "reason": "生产灰度、A/B 与反馈闭环方法。"
     }
   }
 }
