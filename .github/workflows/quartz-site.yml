@@ -78,6 +78,7 @@ jobs:
           test -f .quartz-engine/public/wiki/ops-and-reliability/failure-postmortem.html
           test -f .quartz-engine/public/wiki/evaluation/evaluation.html
           test -f .quartz-engine/public/wiki/decisions/decision-center.html
+          test -f .quartz-engine/public/wiki/production/production-readiness.html
 
       - name: Upload Pages artifact
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
