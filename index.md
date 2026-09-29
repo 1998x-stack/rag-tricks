@@ -12,19 +12,20 @@ description: 可追溯、可验证、面向生产实践的 RAG 工程知识库
 
 | 目标 | 入口 |
 |---|---|
-| **Learn**：系统学习 RAG | [学习路径](#学习路径) |
+| **Learn**：系统学习 RAG | [Learning Path](./wiki/learning/learning-path.md) |
 | **Build**：设计生产 RAG | [系统架构设计](./wiki/architecture/architecture.md) |
 | **Operate**：上线与生产就绪 | [Production Readiness](./wiki/production/production-readiness.md) |
 | **Debug**：排查效果/性能问题 | [问题排查入口](#问题排查入口) |
 | **Evaluate**：建立评估与回归体系 | [Evaluation Center](./wiki/evaluation/evaluation.md) |
 | **Decide**：做技术选型 | [Decision Center](./wiki/decisions/decision-center.md) |
+| **Glossary**：查术语与指标 | [RAG Glossary](./wiki/glossary/glossary.md) |
 | **Verify**：核验来源和证据 | [来源与证据规范](./SOURCE_POLICY.md) |
 
 ---
 
 ## 学习路径
 
-推荐按端到端链路学习，而不是按文件数量浏览：
+完整分阶段路线见 [Learning Path](./wiki/learning/learning-path.md)，按岗位重点见 [Role-based Paths](./wiki/learning/role-based-paths.md)。下面保留最短主线：
 
 1. [RAG 基础](./wiki/introduction/rag-basics.md)
 2. [整体架构](./wiki/architecture/overview.md)
