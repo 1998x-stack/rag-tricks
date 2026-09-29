@@ -31,12 +31,12 @@
   },
   "pages": {
     "contradictory.md": {
-      "status": "needs_verification",
+      "status": "derived",
       "source_refs": [
         "source-manual"
       ],
-      "priority": "high",
-      "reason": "包含大量精确指标、默认策略与业务实践结论。"
+      "priority": "normal",
+      "reason": "兼容入口；原二元权衡已迁移到结构化 Decision Center。"
     },
     "wiki/introduction/bytedance-rag-applications.md": {
       "status": "partial",
@@ -148,6 +148,110 @@
       "source_refs": [],
       "priority": "normal",
       "reason": "生产灰度、A/B 与反馈闭环方法。"
+    },
+    "wiki/decisions/decision-center.md": {
+      "status": "derived",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "normal",
+      "reason": "Decision Record：来源材料案例 + 显式工程推导；具体边界见页面来源与证据章节。"
+    },
+    "wiki/decisions/retrieval-strategy.md": {
+      "status": "partial",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "normal",
+      "reason": "Decision Record：来源材料案例 + 显式工程推导；具体边界见页面来源与证据章节。"
+    },
+    "wiki/decisions/model-size.md": {
+      "status": "partial",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "normal",
+      "reason": "Decision Record：来源材料案例 + 显式工程推导；具体边界见页面来源与证据章节。"
+    },
+    "wiki/decisions/embedding-dimension.md": {
+      "status": "partial",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "normal",
+      "reason": "Decision Record：来源材料案例 + 显式工程推导；具体边界见页面来源与证据章节。"
+    },
+    "wiki/decisions/index-freshness.md": {
+      "status": "partial",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "normal",
+      "reason": "Decision Record：来源材料案例 + 显式工程推导；具体边界见页面来源与证据章节。"
+    },
+    "wiki/decisions/retrieval-trigger.md": {
+      "status": "derived",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "normal",
+      "reason": "Decision Record：来源材料案例 + 显式工程推导；具体边界见页面来源与证据章节。"
+    },
+    "wiki/decisions/vector-precision.md": {
+      "status": "partial",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "normal",
+      "reason": "Decision Record：来源材料案例 + 显式工程推导；具体边界见页面来源与证据章节。"
+    },
+    "wiki/decisions/chunking-strategy.md": {
+      "status": "partial",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "normal",
+      "reason": "Decision Record：来源材料案例 + 显式工程推导；具体边界见页面来源与证据章节。"
+    },
+    "wiki/decisions/context-compression.md": {
+      "status": "partial",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "normal",
+      "reason": "Decision Record：来源材料案例 + 显式工程推导；具体边界见页面来源与证据章节。"
+    },
+    "wiki/decisions/platform-vs-custom.md": {
+      "status": "partial",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "normal",
+      "reason": "Decision Record：来源材料案例 + 显式工程推导；具体边界见页面来源与证据章节。"
+    },
+    "wiki/decisions/multi-region.md": {
+      "status": "partial",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "normal",
+      "reason": "Decision Record：来源材料案例 + 显式工程推导；具体边界见页面来源与证据章节。"
+    },
+    "wiki/decisions/gpu-scheduling.md": {
+      "status": "partial",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "normal",
+      "reason": "Decision Record：来源材料案例 + 显式工程推导；具体边界见页面来源与证据章节。"
+    },
+    "wiki/decisions/model-vs-corpus.md": {
+      "status": "derived",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "normal",
+      "reason": "Decision Record：来源材料案例 + 显式工程推导；具体边界见页面来源与证据章节。"
     }
   }
 }
