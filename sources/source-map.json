@@ -27,6 +27,27 @@
       "url": "https://learn.microsoft.com/azure/architecture/ai-ml/guide/rag/rag-information-retrieval",
       "verified_at": "2026-09-29",
       "note": "用于 Precision@K、Recall@K、MRR 等经典检索指标的外部参考。"
+    },
+    "external-opentelemetry-semconv": {
+      "title": "OpenTelemetry Semantic Conventions 1.44.0",
+      "kind": "external-standard",
+      "url": "https://opentelemetry.io/docs/specs/semconv/",
+      "verified_at": "2026-09-29",
+      "note": "用于 traces/metrics/logs 的统一语义与 GenAI telemetry 参考。"
+    },
+    "external-owasp-llm-top10-2025": {
+      "title": "OWASP Top 10 for LLM Applications 2025",
+      "kind": "external-security-guidance",
+      "url": "https://genai.owasp.org/llm-top-10/",
+      "verified_at": "2026-09-29",
+      "note": "用于 GenAI/RAG 攻击面和安全检查项。"
+    },
+    "external-nist-ai-600-1": {
+      "title": "NIST AI 600-1 Generative AI Profile",
+      "kind": "external-risk-framework",
+      "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+      "verified_at": "2026-09-29",
+      "note": "用于生成式 AI 生命周期风险管理框架。"
     }
   },
   "pages": {
@@ -252,6 +273,57 @@
       ],
       "priority": "normal",
       "reason": "Decision Record：来源材料案例 + 显式工程推导；具体边界见页面来源与证据章节。"
+    },
+    "wiki/production/production-readiness.md": {
+      "status": "external",
+      "source_refs": [
+        "external-opentelemetry-semconv",
+        "external-owasp-llm-top10-2025",
+        "external-nist-ai-600-1"
+      ],
+      "priority": "normal",
+      "reason": "Production Readiness 模块：外部标准/来源材料与显式工程推导。"
+    },
+    "wiki/production/observability.md": {
+      "status": "external",
+      "source_refs": [
+        "external-opentelemetry-semconv"
+      ],
+      "priority": "normal",
+      "reason": "Production Readiness 模块：外部标准/来源材料与显式工程推导。"
+    },
+    "wiki/production/security.md": {
+      "status": "external",
+      "source_refs": [
+        "external-owasp-llm-top10-2025",
+        "external-nist-ai-600-1"
+      ],
+      "priority": "normal",
+      "reason": "Production Readiness 模块：外部标准/来源材料与显式工程推导。"
+    },
+    "wiki/production/recoverability.md": {
+      "status": "partial",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "normal",
+      "reason": "Production Readiness 模块：外部标准/来源材料与显式工程推导。"
+    },
+    "wiki/production/capacity-performance.md": {
+      "status": "derived",
+      "source_refs": [],
+      "priority": "normal",
+      "reason": "Production Readiness 模块：外部标准/来源材料与显式工程推导。"
+    },
+    "wiki/production/release-readiness-checklist.md": {
+      "status": "derived",
+      "source_refs": [
+        "external-opentelemetry-semconv",
+        "external-owasp-llm-top10-2025",
+        "external-nist-ai-600-1"
+      ],
+      "priority": "normal",
+      "reason": "Production Readiness 模块：外部标准/来源材料与显式工程推导。"
     }
   }
 }
