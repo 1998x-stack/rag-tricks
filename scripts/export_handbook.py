@@ -206,6 +206,7 @@ def main():
         '-o', str(OUT/'rag-tricks-handbook.epub'), '--toc', '--toc-depth=3', '--split-level=2',
         '--css', str(ROOT/'assets/exports/epub.css'), '--epub-cover-image', str(ROOT/'assets/exports/cover.png'),
         '-M', 'title=RAG Tricks：RAG 工程知识手册', '-M', 'subtitle=可追溯 · 可验证 · 面向生产实践',
+        '-M', 'toc-title=目录', '-M', 'abstract-title=摘要',
         '-M', 'author=RAG Tricks 项目维护者', '-M', 'lang=zh-CN', '-M', 'date=2026-10-04',
         '-M', 'rights=原始材料权利归各自权利人；历史内容仍待逐条核验。'], check=True)
     subprocess.run(['node', str(ROOT/'tools/export/xmind.cjs')], check=True)

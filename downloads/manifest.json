@@ -43,7 +43,7 @@
     "wiki/data-layer/text-preprocessing.md": "7bd1c2556dfb5b4d1ea35bad96f1c86e57ee520a57f3c49aa6495dac6e803831",
     "wiki/evaluation/evaluation.md": "fcabc0fb668676c1c8e2618b163f96f8f0aac1fa4808f18e9f5cdb68dfaf1136",
     "wiki/evaluation/experiment-protocol.md": "06571e04f38242c39d4a180122333afb89c250eb562209934ff144e989cdaa34",
-    "wiki/evaluation/metrics.md": "850b623abce30e1d42f38d65ecc928144d54b6a7ab72e4c26f7f41a35a8ce6f3",
+    "wiki/evaluation/metrics.md": "486e842d2694d7079eba853603a9482f0cd6ab02afb9b3ba0092f667f696c480",
     "wiki/evaluation/troubleshooting.md": "88fdce43af81c67b251568feb0dfe98ee2bbf145e5057311b5f0a0ae95f86e3f",
     "wiki/generation/generation-efficiency.md": "540fc5cff36f75f946cfb0fb5a9bdc370eccb6abcccb0ece3478a552264a3366",
     "wiki/generation/generation-evaluation.md": "d82e89017d08d73bdab1046be54d3db8b5aa7b1041506f540269f730f4134426",
@@ -81,12 +81,12 @@
   },
   "files": {
     "rag-tricks-detailed.xmind": {
-      "bytes": 318083,
-      "sha256": "75475d461f4aa62d1e657707e19bb84a965acbf8fdd193c9af24375bcec5f4bd"
+      "bytes": 318194,
+      "sha256": "db3ca602404ad040f097d60782d8af8c33be0456b75884aa73291ddca8cc1509"
     },
     "rag-tricks-handbook.epub": {
-      "bytes": 373670,
-      "sha256": "88dc6b70a374b60e657328891505274e04a8b33ee9c186f20fd15210b8cca95a"
+      "bytes": 373745,
+      "sha256": "5a93a1e4bf9f09cc2542384a3462ad31ad45254aa71b3dfff7e2daf965346193"
     }
   }
 }
