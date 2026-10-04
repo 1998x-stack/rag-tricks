@@ -70,9 +70,17 @@ RAG 技术已从实验性工具演变为企业核心基础设施。字节跳动�
 
 ## 参见
 
-- [[multimodal-rag]] — 多模态是未来四大方向之首
-- [[rag-agent]] — Agent 集成推动 RAG 走向智能自动化
-- [[privacy-security]] — 高安全是金融医疗等场景的前置条件
-- [[efficiency-optimization]] — 极致效率优化支撑超大规模业务
-- [[system-integration]] — 与业务系统集成是生态开放的基础
-- [[../introduction/rag-basics]] — 从 RAG 基本原理到未来展望的完整旅程
+- [多模态 RAG](multimodal-rag.md) — 多模态是未来四大方向之首
+- [RAG 与 Agent 集成](rag-agent.md) — Agent 集成推动 RAG 走向智能自动化
+- [隐私安全增强](privacy-security.md) — 高安全是金融医疗等场景的前置条件
+- [效率极致优化](../cost-and-efficiency/efficiency-optimization.md) — 极致效率优化支撑超大规模业务
+- [业务系统深度集成](system-integration.md) — 与业务系统集成是生态开放的基础
+- [RAG 基本原理](../introduction/rag-basics.md) — 从 RAG 基本原理到未来展望的完整旅程
+
+## 来源与证据
+
+- Evidence: Unverified
+- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
+- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
+- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
+- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)

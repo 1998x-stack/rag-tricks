@@ -12,6 +12,9 @@ permissions:
 jobs:
   quality:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -19,7 +22,16 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: ${{ matrix.python-version }}
+          cache: pip
 
-      - name: Run content integrity checks
-        run: python3 scripts/quality_check.py
+      - name: Install checker dependencies
+        run: python -m pip install -r requirements-dev.txt
+
+      - name: Run checker regression tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Run strict content integrity checks
+        run: |
+          python scripts/quality_check.py --strict
+          python scripts/check_exports.py

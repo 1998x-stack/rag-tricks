@@ -1,3 +1,32 @@
-title: 字节跳动 RAG 实践手册 Wiki
-description: 从《字节跳动 RAG 实践手册》中提取、分类、深化的结构化知识库
+title: RAG Tricks · RAG 工程知识库
+description: 可追溯、可验证、面向生产实践的 RAG 工程知识库
+url: https://1998x-stack.github.io
+baseurl: /rag-tricks
 theme: jekyll-theme-cayman
+markdown: kramdown
+kramdown:
+  input: GFM
+plugins:
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+relative_links:
+  enabled: true
+  collections: false
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+exclude:
+  - raw
+  - scripts
+  - tools
+  - tests
+  - docs/superpowers
+  - requirements-dev.txt
+  - CLAUDE.md
+include:
+  - README.md
+  - CONTRIBUTING.md
+optional_front_matter:
+  remove_originals: true
