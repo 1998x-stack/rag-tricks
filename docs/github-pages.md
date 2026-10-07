@@ -13,6 +13,7 @@ main 更新 / 手动运行
     → Python 回归测试
     → Markdown 严格检查
     → 导出新鲜度与包结构验证
+    → EPUBCheck 标准校验（固定版本与 SHA-256）
     → Jekyll 构建
     → 最终 HTML 链接与下载验证
     → Pages artifact
@@ -50,7 +51,7 @@ GitHub 的 [Pages REST API](https://docs.github.com/en/rest/pages) 和[自定义
 | `jekyll-relative-links` | 将 `.md` 相对链接改为构建后的 HTML 路径 |
 | `jekyll-optional-front-matter` | 将未带 YAML frontmatter 的历史 Markdown 处理为页面 |
 | `include` | 明确包含 README 与 CONTRIBUTING，避免被视为无需渲染的元文件 |
-| `defaults.layout` | 为知识页统一使用 Cayman 默认布局 |
+| `defaults.layout` | 使用 handbook 阅读布局，继承 Cayman 并增加主导航、阅读底栏及渐进增强目录 |
 | `exclude` | 不将 raw、脚本、测试、工具和本地草稿复制进站点 |
 
 排除 raw 只影响 Pages 构建产物，不移除仓库中的原始文件，也不改变版权状态。

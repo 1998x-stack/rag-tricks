@@ -11,10 +11,13 @@ class Document(HTMLParser):
         super().__init__()
         self.links = []
         self.ids = set()
+        self.duplicate_ids = set()
         self.feed(text)
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if attrs.get('id') in self.ids:
+            self.duplicate_ids.add(attrs['id'])
         for key in ('id', 'name'):
             if key in attrs:
                 self.ids.add(attrs[key])
@@ -29,8 +32,14 @@ def validate(root, baseurl):
     pages = {p: Document(p.read_text(encoding='utf-8')) for p in root.rglob('*.html')}
     errors = []
     for page, doc in pages.items():
+        for identifier in doc.duplicate_ids:
+            errors.append(f'{page.relative_to(root)}: duplicate id: {identifier}')
         for raw in doc.links:
-            url = urlsplit(raw)
+            try:
+                url = urlsplit(raw)
+            except ValueError:
+                errors.append(f'{page.relative_to(root)}: malformed URL: {raw}')
+                continue
             if url.scheme or url.netloc:
                 continue
             name = unquote(url.path)

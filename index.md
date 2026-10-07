@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: handbook
 title: RAG Tricks · RAG 工程知识库
 description: 可追溯、可验证、面向生产实践的 RAG 工程知识库
 ---

@@ -34,9 +34,14 @@ class Page:
     prose: str
 
 
+def markdown_body(text: str) -> str:
+    """Remove only leading YAML frontmatter before parsing visible content."""
+    return re.sub(r'\A---\s*\n.*?\n---\s*(?:\n|$)', '', text, count=1, flags=re.S)
+
+
 def parse_page(path: Path) -> Page:
     text = path.read_text(encoding='utf-8')
-    body = re.sub(r'\A---\s*\n.*?\n---\s*(?:\n|$)', '', text, count=1, flags=re.S)
+    body = markdown_body(text)
     tokens = PARSER.parse(body)
     links, wikilinks, headings, prose = [], [], [], []
     anchors: set[str] = set()

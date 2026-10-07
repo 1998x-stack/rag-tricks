@@ -9,10 +9,11 @@ import subprocess
 import sys
 import zipfile
 from pathlib import Path
-from urllib.parse import quote, urlsplit
+from urllib.parse import quote
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from quality_check import PARSER, ROOT, local_target, parse_page
+from quality_check import PARSER, ROOT, local_target, parse_page, markdown_body
+from export_manifest import APPENDICES, ARTIFACTS, DEPENDENCIES, EDITION, source_paths
 
 BUILD = ROOT / '.build'
 OUT = ROOT / 'downloads'
@@ -32,7 +33,8 @@ def key(path):
 
 
 def plain(tokens):
-    return ''.join(t.content for t in tokens if t.type in {'text', 'code_inline', 'softbreak'})
+    return ''.join(' ' if t.type in {'softbreak', 'hardbreak'} else t.content
+                   for t in tokens if t.type in {'text', 'code_inline', 'softbreak', 'hardbreak'})
 
 
 def short(text):
@@ -48,9 +50,10 @@ def page_node(path, registry):
              'external': 'External · 外部依据'}.get(state, '来源与维护')
     root = {'title': page.headings[0][1], 'labels': [label], 'note': page.text,
             'href': SITE + path.relative_to(ROOT).with_suffix('.html').as_posix(), 'children': []}
-    tokens = PARSER.parse(page.text)
+    tokens = PARSER.parse(markdown_body(page.text))
     stack = [(1, root)]
     row = None
+    items = []
     for i, token in enumerate(tokens):
         if token.type == 'heading_open':
             level = int(token.tag[1])
@@ -61,11 +64,17 @@ def page_node(path, registry):
             child = {'title': plain(tokens[i+1].children or []), 'children': []}
             stack[-1][1]['children'].append(child)
             stack.append((level, child))
+        elif token.type == 'list_item_open':
+            child = {'title': '列表项', 'children': []}
+            (items[-1] if items else stack[-1][1])['children'].append(child)
+            items.append(child)
+        elif token.type == 'list_item_close':
+            items.pop()
         elif token.type == 'tr_open':
             row = []
         elif token.type == 'tr_close' and row:
             content = ' | '.join(row)
-            stack[-1][1]['children'].append({'title': short(content), 'note': content})
+            (items[-1] if items else stack[-1][1])['children'].append({'title': short(content), 'note': content})
             row = None
         elif token.type == 'inline' and (i == 0 or tokens[i-1].type != 'heading_open'):
             text = plain(token.children or []).strip()
@@ -73,16 +82,18 @@ def page_node(path, registry):
                 continue
             if row is not None:
                 row.append(text)
+            elif items and items[-1]['title'] == '列表项':
+                items[-1].update(title=short(text), note=text)
             else:
-                stack[-1][1]['children'].append({'title': short(text), 'note': text})
+                (items[-1] if items else stack[-1][1])['children'].append({'title': short(text), 'note': text})
         elif token.type in {'fence', 'code_block'}:
-            stack[-1][1]['children'].append({'title': '代码 / 配置示例', 'note': token.content})
+            (items[-1] if items else stack[-1][1])['children'].append({'title': '代码 / 配置示例', 'note': token.content})
     return root
 
 
 def render_page(path, selected):
     page = parse_page(path)
-    text = re.sub(r'\A---\s*\n.*?\n---\s*\n', '', page.text, count=1, flags=re.S)
+    text = markdown_body(page.text)
     # GitHub admonition labels are rendered as prose by CommonMark; use readable print labels.
     text = re.sub(r'^> \[!WARNING\]\s*$', '> **证据提示**', text, flags=re.M)
     tokens = PARSER.parse(text)
@@ -96,7 +107,7 @@ def render_page(path, selected):
                 suffix += 1
                 anchor = f'{slug}-{suffix}'
             used.add(anchor)
-            token.attrSet('id', key(path) + '--' + anchor)
+            token.attrSet('id', key(path) if token.tag == 'h1' else key(path) + '--' + anchor)
             token.tag = f'h{min(int(token.tag[1])+1,6)}'
         elif token.type == 'heading_close':
             token.tag = f'h{min(int(token.tag[1])+1,6)}'
@@ -109,7 +120,9 @@ def render_page(path, selected):
                 continue
             dest, frag = target
             if dest in selected:
-                href = '#' + key(dest) + ('--' + frag if frag else '')
+                first_title = parse_page(dest).headings[0][1]
+                first_slug = re.sub(r'[^\w\-\s]', '', first_title.lower()).replace(' ', '-')
+                href = '#' + key(dest) + ('--' + frag if frag and frag != first_slug else '')
             else:
                 relative = dest.relative_to(ROOT).as_posix()
                 if relative.endswith('.md'):
@@ -117,7 +130,7 @@ def render_page(path, selected):
                 href = SITE + quote(relative) + ('#' + quote(frag) if frag else '')
             child.attrSet('href', href)
     source = html.escape(path.relative_to(ROOT).as_posix())
-    return (f'<div id="{key(path)}"></div>' + PARSER.renderer.render(tokens, PARSER.options, {})
+    return (PARSER.renderer.render(tokens, PARSER.options, {})
             + f'<p class="source-line">仓库章节：{source}</p>')
 
 
@@ -171,12 +184,13 @@ def main():
             files.remove(main_path)
             files.insert(0, main_path)
         groups.append((title, files))
-    groups.append(('12 设计权衡与证据附录', [ROOT/p for p in [
-        'contradictory.md', 'SOURCE_POLICY.md', 'sources/claim-audit.md',
-        'docs/project-review.md', 'docs/maintenance.md']]))
+    groups.append(('12 设计权衡与证据附录', [ROOT/p for p in APPENDICES]))
     selected = {p for _, files in groups for p in files}
+    expected = {ROOT/p for p in source_paths(ROOT)}
+    if selected != expected:
+        raise ValueError(f'Export section configuration omits pages: {expected - selected}')
     overview = {'title': 'RAG TRICKS｜工程知识地图', 'note':
-        '2026-10-04 详细版。先读证据标记，再进入主题工作表。历史指标未逐条验证；完整正文保留在主题备注与 EPUB 中。',
+        f'{EDITION} 详细版。先读证据标记，再进入主题工作表。历史指标未逐条验证；完整正文保留在主题备注与 EPUB 中。',
         'children': []}
     sheets = [overview]
     for title, files in groups:
@@ -207,13 +221,15 @@ def main():
         '--css', str(ROOT/'assets/exports/epub.css'), '--epub-cover-image', str(ROOT/'assets/exports/cover.png'),
         '-M', 'title=RAG Tricks：RAG 工程知识手册', '-M', 'subtitle=可追溯 · 可验证 · 面向生产实践',
         '-M', 'toc-title=目录', '-M', 'abstract-title=摘要',
-        '-M', 'author=RAG Tricks 项目维护者', '-M', 'lang=zh-CN', '-M', 'date=2026-10-04',
+        '-M', 'author=RAG Tricks 项目维护者', '-M', 'lang=zh-CN', '-M', f'date={EDITION}',
         '-M', 'rights=原始材料权利归各自权利人；历史内容仍待逐条核验。'], check=True)
     subprocess.run(['node', str(ROOT/'tools/export/xmind.cjs')], check=True)
     xmind_counts = finish_xmind(sheets)
-    manifest = {'edition': '2026-10-04', 'pages': len(selected), 'sections': len(groups),
+    manifest = {'schema_version': 2, 'edition': EDITION, 'pages': len(selected), 'sections': len(groups),
+                'chapters': [{'path': str(p.relative_to(ROOT)), 'id': key(p), 'title': parse_page(p).headings[0][1]} for _, files in groups for p in files],
+                'dependencies': {name: hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in DEPENDENCIES},
                 'xmind': xmind_counts, 'inputs': {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(selected)},
-                'files': {p.name: {'bytes': p.stat().st_size, 'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for p in sorted(OUT.iterdir()) if p.suffix in {'.epub', '.xmind'}}}
+                'files': {p.name: {'bytes': p.stat().st_size, 'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for p in (OUT/name for name in ARTIFACTS)}}
     (OUT/'manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2)+'\n')
     print(f'Exported {len(selected)} pages across {len(groups)} sections; {len(sheets)} XMind sheets.')
 

@@ -1,3 +1,4 @@
+lang: zh-CN
 title: RAG Tricks · RAG 工程知识库
 description: 可追溯、可验证、面向生产实践的 RAG 工程知识库
 url: https://1998x-stack.github.io
@@ -16,7 +17,7 @@ defaults:
   - scope:
       path: ""
     values:
-      layout: default
+      layout: handbook
 exclude:
   - raw
   - scripts

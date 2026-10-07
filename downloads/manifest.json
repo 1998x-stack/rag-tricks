@@ -1,16 +1,386 @@
 {
-  "edition": "2026-10-04",
+  "schema_version": 2,
+  "edition": "2026-10-07",
   "pages": 71,
   "sections": 12,
+  "chapters": [
+    {
+      "path": "wiki/introduction/introduction.md",
+      "id": "p-bb905f92e9f7",
+      "title": "引言"
+    },
+    {
+      "path": "wiki/introduction/bytedance-rag-applications.md",
+      "id": "p-a339adf197f2",
+      "title": "字节跳动业务线 RAG 应用现状"
+    },
+    {
+      "path": "wiki/introduction/rag-basics.md",
+      "id": "p-900cbecfd352",
+      "title": "RAG 基本原理"
+    },
+    {
+      "path": "wiki/introduction/rag-vs-finetuning.md",
+      "id": "p-224da99a7b81",
+      "title": "RAG vs Fine-tuning"
+    },
+    {
+      "path": "wiki/introduction/rag-vs-ir.md",
+      "id": "p-11d1360e9635",
+      "title": "RAG vs 信息检索"
+    },
+    {
+      "path": "wiki/architecture/architecture.md",
+      "id": "p-bf4de2eee387",
+      "title": "系统架构设计"
+    },
+    {
+      "path": "wiki/architecture/data-layer.md",
+      "id": "p-11b212dd7263",
+      "title": "数据层设计"
+    },
+    {
+      "path": "wiki/architecture/generation-layer.md",
+      "id": "p-f7180049bdc5",
+      "title": "生成层设计"
+    },
+    {
+      "path": "wiki/architecture/index-layer.md",
+      "id": "p-dcaff6e01d10",
+      "title": "索引层设计"
+    },
+    {
+      "path": "wiki/architecture/overview.md",
+      "id": "p-843dad03c7e0",
+      "title": "整体架构概述"
+    },
+    {
+      "path": "wiki/architecture/retrieval-layer.md",
+      "id": "p-129449d2426c",
+      "title": "检索层设计"
+    },
+    {
+      "path": "wiki/data-layer/data-layer.md",
+      "id": "p-0407bc39cf92",
+      "title": "数据处理与准备"
+    },
+    {
+      "path": "wiki/data-layer/data-annotation.md",
+      "id": "p-20d6e444b3ff",
+      "title": "数据标注与分类"
+    },
+    {
+      "path": "wiki/data-layer/data-augmentation.md",
+      "id": "p-d5c5da94f977",
+      "title": "数据增强"
+    },
+    {
+      "path": "wiki/data-layer/data-collection-cleaning.md",
+      "id": "p-90228e7ff617",
+      "title": "数据收集与清洗"
+    },
+    {
+      "path": "wiki/data-layer/data-security.md",
+      "id": "p-ae0fd74d37c0",
+      "title": "数据安全与隐私保护"
+    },
+    {
+      "path": "wiki/data-layer/text-preprocessing.md",
+      "id": "p-a91f970da43b",
+      "title": "文本预处理"
+    },
+    {
+      "path": "wiki/indexing/indexing.md",
+      "id": "p-f2dad87f6cf4",
+      "title": "索引构建与优化"
+    },
+    {
+      "path": "wiki/indexing/embedding-model-selection.md",
+      "id": "p-a0ea9780ac86",
+      "title": "嵌入模型选型与定制"
+    },
+    {
+      "path": "wiki/indexing/index-performance-optimization.md",
+      "id": "p-1098aca0b303",
+      "title": "索引性能优化"
+    },
+    {
+      "path": "wiki/indexing/index-quality-evaluation.md",
+      "id": "p-5c26538abffe",
+      "title": "索引质量评估与迭代"
+    },
+    {
+      "path": "wiki/indexing/vector-database.md",
+      "id": "p-54cb73662d19",
+      "title": "向量数据库构建与管理"
+    },
+    {
+      "path": "wiki/indexing/vector-generation-strategy.md",
+      "id": "p-4de0e9f6a017",
+      "title": "向量生成策略"
+    },
+    {
+      "path": "wiki/retrieval/retrieval.md",
+      "id": "p-cfee90fe184f",
+      "title": "检索策略与实现"
+    },
+    {
+      "path": "wiki/retrieval/hybrid-retrieval.md",
+      "id": "p-5f696088edf8",
+      "title": "混合检索"
+    },
+    {
+      "path": "wiki/retrieval/keyword-retrieval.md",
+      "id": "p-3b939c83c382",
+      "title": "关键词检索（稀疏检索）"
+    },
+    {
+      "path": "wiki/retrieval/query-understanding.md",
+      "id": "p-174cb7474d10",
+      "title": "查询理解增强"
+    },
+    {
+      "path": "wiki/retrieval/result-processing.md",
+      "id": "p-1e2fc7f0290d",
+      "title": "检索结果处理与过滤"
+    },
+    {
+      "path": "wiki/retrieval/retrieval-evaluation.md",
+      "id": "p-b05f6055454e",
+      "title": "检索效果评估与调优"
+    },
+    {
+      "path": "wiki/retrieval/retrieval-trigger.md",
+      "id": "p-7f64e2fdcf76",
+      "title": "检索触发策略"
+    },
+    {
+      "path": "wiki/retrieval/semantic-retrieval.md",
+      "id": "p-5b89bb92a890",
+      "title": "语义检索（向量检索）"
+    },
+    {
+      "path": "wiki/generation/generation.md",
+      "id": "p-1003399987bd",
+      "title": "生成层设计与优化"
+    },
+    {
+      "path": "wiki/generation/generation-efficiency.md",
+      "id": "p-94b3a98be3be",
+      "title": "生成效率与成本优化"
+    },
+    {
+      "path": "wiki/generation/generation-evaluation.md",
+      "id": "p-0943c6277dcb",
+      "title": "生成层效果评估"
+    },
+    {
+      "path": "wiki/generation/generation-quality.md",
+      "id": "p-5dd5ea40e544",
+      "title": "生成结果质量控制"
+    },
+    {
+      "path": "wiki/generation/model-selection.md",
+      "id": "p-cef993dd070e",
+      "title": "语言模型选型与适配"
+    },
+    {
+      "path": "wiki/generation/prompt-engineering.md",
+      "id": "p-1492e9762d42",
+      "title": "Prompt Engineering 实践"
+    },
+    {
+      "path": "wiki/evaluation/evaluation.md",
+      "id": "p-0c6758c3fd02",
+      "title": "RAG 评估与实验"
+    },
+    {
+      "path": "wiki/evaluation/experiment-protocol.md",
+      "id": "p-c5416b8f9729",
+      "title": "RAG 离线实验协议"
+    },
+    {
+      "path": "wiki/evaluation/metrics.md",
+      "id": "p-3faa35876715",
+      "title": "RAG 指标与计分边界"
+    },
+    {
+      "path": "wiki/evaluation/troubleshooting.md",
+      "id": "p-753ac813c5d8",
+      "title": "RAG 分层排障流程"
+    },
+    {
+      "path": "wiki/business-cases/business-cases.md",
+      "id": "p-5f3cd7979f1c",
+      "title": "业务落地案例"
+    },
+    {
+      "path": "wiki/business-cases/douyin-ecommerce.md",
+      "id": "p-82a637ada2ae",
+      "title": "抖音电商：智能客服与商品问答"
+    },
+    {
+      "path": "wiki/business-cases/feishu-knowledge.md",
+      "id": "p-388c5461c558",
+      "title": "飞书：知识库问答与文档助手"
+    },
+    {
+      "path": "wiki/business-cases/fintech-research.md",
+      "id": "p-b6ef938b6655",
+      "title": "金融科技：研报解读与投资问答"
+    },
+    {
+      "path": "wiki/business-cases/jianying-script.md",
+      "id": "p-4490676068a4",
+      "title": "剪映：视频脚本生成与创意辅助"
+    },
+    {
+      "path": "wiki/ops-and-reliability/ops-and-reliability.md",
+      "id": "p-b729790f094f",
+      "title": "系统运维与监控"
+    },
+    {
+      "path": "wiki/ops-and-reliability/automated-ops.md",
+      "id": "p-8579de973776",
+      "title": "自动化运维体系"
+    },
+    {
+      "path": "wiki/ops-and-reliability/cross-region-deployment.md",
+      "id": "p-aea900f61467",
+      "title": "跨地域部署方案"
+    },
+    {
+      "path": "wiki/ops-and-reliability/failure-postmortem.md",
+      "id": "p-5032e3c71619",
+      "title": "故障复盘与经验沉淀"
+    },
+    {
+      "path": "wiki/ops-and-reliability/full-stack-monitoring.md",
+      "id": "p-37ea91d7602f",
+      "title": "全链路监控体系"
+    },
+    {
+      "path": "wiki/ops-and-reliability/incident-response.md",
+      "id": "p-24f2134ec0a3",
+      "title": "应急响应机制"
+    },
+    {
+      "path": "wiki/ops-and-reliability/performance-testing.md",
+      "id": "p-04759a2153bc",
+      "title": "性能压测实践"
+    },
+    {
+      "path": "wiki/ops-and-reliability/tech-reuse-platform.md",
+      "id": "p-4425666655ba",
+      "title": "跨业务线技术复用方案"
+    },
+    {
+      "path": "wiki/cost-and-efficiency/cost-and-efficiency.md",
+      "id": "p-51ceba4e9f31",
+      "title": "成本与效率"
+    },
+    {
+      "path": "wiki/cost-and-efficiency/cost-breakdown.md",
+      "id": "p-b0f0382acd93",
+      "title": "成本构成与拆解"
+    },
+    {
+      "path": "wiki/cost-and-efficiency/cost-monitoring.md",
+      "id": "p-3481ebf715bc",
+      "title": "成本监控与归因"
+    },
+    {
+      "path": "wiki/cost-and-efficiency/cost-optimization.md",
+      "id": "p-1804951c3d9a",
+      "title": "成本优化策略"
+    },
+    {
+      "path": "wiki/cost-and-efficiency/efficiency-optimization.md",
+      "id": "p-178f77e80f23",
+      "title": "效率极致优化"
+    },
+    {
+      "path": "wiki/advanced-topics/advanced-topics.md",
+      "id": "p-d7519cae0566",
+      "title": "高级专题"
+    },
+    {
+      "path": "wiki/advanced-topics/future-outlook.md",
+      "id": "p-46b1c1867e19",
+      "title": "总结与展望"
+    },
+    {
+      "path": "wiki/advanced-topics/multimodal-rag.md",
+      "id": "p-b4ec73b75f81",
+      "title": "多模态 RAG"
+    },
+    {
+      "path": "wiki/advanced-topics/onboarding-guide.md",
+      "id": "p-d89921976c86",
+      "title": "新手工程师入门指南"
+    },
+    {
+      "path": "wiki/advanced-topics/privacy-security.md",
+      "id": "p-782eff01e6c3",
+      "title": "隐私安全增强"
+    },
+    {
+      "path": "wiki/advanced-topics/rag-agent.md",
+      "id": "p-738c9f0e2658",
+      "title": "RAG 与 Agent 集成"
+    },
+    {
+      "path": "wiki/advanced-topics/system-integration.md",
+      "id": "p-20827db73716",
+      "title": "业务系统深度集成"
+    },
+    {
+      "path": "contradictory.md",
+      "id": "p-c765250073e1",
+      "title": "矛盾观点汇总"
+    },
+    {
+      "path": "SOURCE_POLICY.md",
+      "id": "p-e4dde8d59a21",
+      "title": "来源与证据规范"
+    },
+    {
+      "path": "sources/claim-audit.md",
+      "id": "p-5834cf0ca066",
+      "title": "原文抽样审计记录"
+    },
+    {
+      "path": "docs/project-review.md",
+      "id": "p-c90a4eae932d",
+      "title": "RAG Tricks 项目审计与改进记录"
+    },
+    {
+      "path": "docs/maintenance.md",
+      "id": "p-0541ee302f10",
+      "title": "知识库维护说明"
+    }
+  ],
+  "dependencies": {
+    "scripts/export_handbook.py": "aa3edb1285cae2973be0819ac7ae57d0dea2b39248274fd853b44fc780fac848",
+    "scripts/export_manifest.py": "b081e31a418ebc8603214317ecadd9b7ed96d9820476b374e69b80ebccadf61c",
+    "scripts/quality_check.py": "8458b23a6525e3376fa0c1b41da7af45c213276f363a4f4ac3127b9a8db808b3",
+    "tools/export/xmind.cjs": "52ee3c7dbce3529de45000209957803a46f0f5a39b2a9764ed2c621ce0112ac0",
+    "tools/export/package.json": "b80153db1f9292902b8e59b7784b7fe415918419415091fa034dbfc3e118551a",
+    "tools/export/package-lock.json": "0ded33544b0811a0571f0546979fb52c8d66f21621e14c45eceec69e5b4dbd68",
+    "requirements-dev.txt": "3be500b07f44a5eaf26c31226f2531a0561fc57ad5cf8310d9597dac2c83d671",
+    "assets/exports/cover.png": "f44cc23119dd35857f9a0e38a24a68d07be7af10e131cdb5e4499b7cd0bb407a",
+    "assets/exports/epub.css": "fbf0d9a0bffbfac1c6272315da19ec6915343ecc585af20be70b37efc6b877fc",
+    "sources/source-map.json": "15c6820bed93a1197b037a4ed7baee6cabe2a5b3e8c8800cce851000b97d3fb0"
+  },
   "xmind": {
     "sheets": 13,
-    "topics": 3538
+    "topics": 3550
   },
   "inputs": {
     "SOURCE_POLICY.md": "94d4dae65afd428fe4243f1ebeace999438dfc8b85d2a7b018877eb90ac2c4b9",
     "contradictory.md": "96ed8fb3a714372a2f73399865bc583e1d94b1d374f79e37d2511261e0629497",
-    "docs/maintenance.md": "65e4eb6d0b094d3b4bca336b74adfd5857d517d8f4f6c3c80bcb3ef071712add",
-    "docs/project-review.md": "c6ef65e9c1f335566db6ddbc46abdfba9520d0806a3be884c551e0e4e09f9593",
+    "docs/maintenance.md": "cdeb1b86d095f487777e31589ab9a7dc563f23b543c9556b1dcecd55d45a2a8b",
+    "docs/project-review.md": "de299c5137928e62588864804ad5734ee2a9c3ac63c3bc8547588c8ed37cd659",
     "sources/claim-audit.md": "757e90208e690d7b58b767d2468a68a1a4e3f83136279bc6db53cff0a4146e58",
     "wiki/advanced-topics/advanced-topics.md": "a4beb30c516cb04c5d130f9b14161bc6bb9073c00db80e8696218c12ebd4b52d",
     "wiki/advanced-topics/future-outlook.md": "20afa8cb0e30c796e5bde909535fdf7ea8f3d3835bceda23bb5540327e728a1f",
@@ -80,13 +450,13 @@
     "wiki/retrieval/semantic-retrieval.md": "7aaee2551c8d1213349fcdee5191cf09263c0aa3ab69c9d2e475dea51e4b37e9"
   },
   "files": {
-    "rag-tricks-detailed.xmind": {
-      "bytes": 318194,
-      "sha256": "db3ca602404ad040f097d60782d8af8c33be0456b75884aa73291ddca8cc1509"
-    },
     "rag-tricks-handbook.epub": {
-      "bytes": 373745,
-      "sha256": "5a93a1e4bf9f09cc2542384a3462ad31ad45254aa71b3dfff7e2daf965346193"
+      "bytes": 372702,
+      "sha256": "57c144c9d6a0d733693d385f44754bbfe2cd976df9ca8bcd0823a29c1f707725"
+    },
+    "rag-tricks-detailed.xmind": {
+      "bytes": 319969,
+      "sha256": "54e8aa9df1b8f220dabe0d0342f1fcc85f639b306e29c116e9f340ad52e631e5"
     }
   }
 }
