@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: handbook
 title: RAG Tricks · RAG 工程知识库
 description: 可追溯、可验证、面向生产实践的 RAG 工程知识库
 ---
@@ -7,6 +7,8 @@ description: 可追溯、可验证、面向生产实践的 RAG 工程知识库
 # RAG Tricks
 
 > 从“资料整理”升级为“工程决策手册”：学习概念、设计系统、排查问题、理解权衡，并尽可能追溯每个关键结论的来源。
+
+[下载 EPUB 电子书与详细 XMind 导图](./downloads/index.md) · [部署与维护说明](./docs/github-pages.md)
 
 ## 你现在想做什么？
 
@@ -39,6 +41,8 @@ description: 可追溯、可验证、面向生产实践的 RAG 工程知识库
 ---
 
 ## 问题排查入口
+
+先按[分层排障流程](./wiki/evaluation/troubleshooting.md)保留失败样本、定位证据在哪一阶段丢失，再查阅以下专题。
 
 ### 召回率低 / 找不到正确内容
 
@@ -97,6 +101,7 @@ description: 可追溯、可验证、面向生产实践的 RAG 工程知识库
 |---|---|
 | [索引构建与优化](./wiki/indexing/indexing.md) | Embedding、向量、索引、质量 |
 | [检索策略与实现](./wiki/retrieval/retrieval.md) | Query、Sparse/Dense/Hybrid、结果处理 |
+| [评估与实验](./wiki/evaluation/evaluation.md) | 指标、实验协议、失败定位 |
 | [生成层设计与优化](./wiki/generation/generation.md) | 模型、Prompt、质量、效率 |
 | [Evaluation Center](./wiki/evaluation/evaluation.md) | 数据集、指标、端到端评估、回归与线上验证 |
 

@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<nav class="handbook-nav" aria-label="主导航">
+  <a class="handbook-brand" href="{{ '/' | relative_url }}">RAG TRICKS</a>
+  <div class="handbook-nav-links">
+    <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>知识地图</a>
+    <a href="{{ '/wiki/evaluation/evaluation.html' | relative_url }}"{% if page.url contains '/evaluation/' %} aria-current="page"{% endif %}>评估与实验</a>
+    <a href="{{ '/downloads/' | relative_url }}"{% if page.url contains '/downloads/' %} aria-current="page"{% endif %}>离线下载</a>
+    <a href="{{ '/SOURCE_POLICY.html' | relative_url }}"{% if page.url == '/SOURCE_POLICY.html' %} aria-current="page"{% endif %}>来源规范</a>
+  </div>
+</nav>
+<article class="handbook-article">
+{{ content }}
+</article>
+<div class="reading-footer">
+  <a href="{{ '/' | relative_url }}">← 返回知识地图</a>
+  <a href="#content">回到顶部 ↑</a>
+</div>

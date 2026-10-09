@@ -1,5 +1,7 @@
 # 向量生成策略
 
+> **证据状态：Unverified。** 本页为历史整理，尚未逐条核验；公司实践、组件名称与精确指标均不能直接作为已证实事实或通用基准。见本页「来源与证据」。
+
 ## 是什么
 
 向量生成是将文本通过嵌入模型转换为向量表示并构建索引的前置环节。字节跳动的向量生成策略核心包含三个方面：动态分块策略（以语义完整性而非固定长度作为分块依据）、多粒度向量生成（对单篇文档生成文档级、段落级、句子级三级向量）和维度精度控制（根据场景选择 768 维或 1024 维，以及 FP16/INT8 精度压缩）。
@@ -45,8 +47,16 @@
 
 ## 参见
 
-- [[embedding-model-selection]] — 嵌入模型决定了向量的语义表达质量
-- [[vector-database]] — 向量维度与精度需与数据库的索引类型和存储方案匹配
-- [[index-performance-optimization]] — 向量压缩和维度策略直接影响索引性能
-- [[../data-layer/text-preprocessing]] — 预处理质量影响向量生成的语义准确性
-- [[index-quality-evaluation]] — 向量生成策略通过 Recall@k 和 MAP 指标评估
+- [嵌入模型选型与定制](embedding-model-selection.md) — 嵌入模型决定了向量的语义表达质量
+- [向量数据库构建与管理](vector-database.md) — 向量维度与精度需与数据库的索引类型和存储方案匹配
+- [索引性能优化](index-performance-optimization.md) — 向量压缩和维度策略直接影响索引性能
+- [文本预处理](../data-layer/text-preprocessing.md) — 预处理质量影响向量生成的语义准确性
+- [索引质量评估与迭代](index-quality-evaluation.md) — 向量生成策略通过 Recall@k 和 MAP 指标评估
+
+## 来源与证据
+
+- Evidence: Unverified
+- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
+- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
+- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
+- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)

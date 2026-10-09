@@ -1,5 +1,7 @@
 # RAG vs Fine-tuning
 
+> **证据状态：Unverified。** 本页为历史整理，尚未逐条核验；公司实践、组件名称与精确指标均不能直接作为已证实事实或通用基准。见本页「来源与证据」。
+
 ## 是什么
 
 RAG（检索增强生成）和 Fine-tuning（模型微调）是两种增强大语言模型能力的技术路线，但二者解决问题的思路截然不同：
@@ -83,8 +85,16 @@ RAG（检索增强生成）和 Fine-tuning（模型微调）是两种增强大�
 
 ## 参见
 
-- [[rag-basics]] — RAG 的索引-检索-生成三步流程
-- [[rag-vs-ir]] — RAG 与传统信息检索的本质差异
-- [[../architecture/generation-layer]] — 生成层中 Fine-tuning 与 RAG 的集成方式
-- [[../architecture/overview]] — 四层架构设计中 RAG 作为独立层的定位
-- [[../../contradictory]] — RAG vs Fine-tuning 在不同场景下的取舍权衡
+- [RAG 基本原理](rag-basics.md) — RAG 的索引-检索-生成三步流程
+- [RAG vs 信息检索](rag-vs-ir.md) — RAG 与传统信息检索的本质差异
+- [生成层设计](../architecture/generation-layer.md) — 生成层中 Fine-tuning 与 RAG 的集成方式
+- [整体架构概述](../architecture/overview.md) — 四层架构设计中 RAG 作为独立层的定位
+- [矛盾观点汇总](../../contradictory.md) — RAG vs Fine-tuning 在不同场景下的取舍权衡
+
+## 来源与证据
+
+- Evidence: Unverified
+- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
+- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
+- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
+- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)

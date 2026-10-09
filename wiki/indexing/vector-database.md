@@ -1,5 +1,7 @@
 # 向量数据库构建与管理
 
+> **证据状态：Unverified。** 本页为历史整理，尚未逐条核验；公司实践、组件名称与精确指标均不能直接作为已证实事实或通用基准。见本页「来源与证据」。
+
 ## 是什么
 
 向量数据库是索引层的核心基础设施，负责存储和管理文本的向量表示并对上层提供高效检索能力。字节跳动采用"自研+开源改造"双轨策略——核心业务（抖音、飞书）使用自研的 ByteVectorDB，边缘业务和测试场景使用基于 Milvus 改造的向量数据库。构建方案涵盖离线索引构建、实时索引更新（NRT）和数据生命周期管理等关键能力。
@@ -55,8 +57,16 @@
 
 ## 参见
 
-- [[vector-generation-strategy]] — 向量生成的质量直接影响数据库存储效果
-- [[index-performance-optimization]] — 数据库的性能优化策略
-- [[index-quality-evaluation]] — 数据库性能通过 ART、QPS、RTO 等指标评估
-- [[embedding-model-selection]] — 不同嵌入模型输出维度需与数据库索引类型匹配
-- [[../data-layer/data-security]] — 向量数据库的加密存储与访问控制方案
+- [向量生成策略](vector-generation-strategy.md) — 向量生成的质量直接影响数据库存储效果
+- [索引性能优化](index-performance-optimization.md) — 数据库的性能优化策略
+- [索引质量评估与迭代](index-quality-evaluation.md) — 数据库性能通过 ART、QPS、RTO 等指标评估
+- [嵌入模型选型与定制](embedding-model-selection.md) — 不同嵌入模型输出维度需与数据库索引类型匹配
+- [数据安全与隐私保护](../data-layer/data-security.md) — 向量数据库的加密存储与访问控制方案
+
+## 来源与证据
+
+- Evidence: Unverified
+- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
+- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
+- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
+- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)

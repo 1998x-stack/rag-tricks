@@ -1,5 +1,7 @@
 # 成本监控与归因
 
+> **证据状态：Unverified。** 本页为历史整理，尚未逐条核验；公司实践、组件名称与精确指标均不能直接作为已证实事实或通用基准。见本页「来源与证据」。
+
 ## 是什么
 
 成本监控与归因是字节跳动 RAG 系统成本管控的第三环，通过 ByteCost 平台实现从指标监控、异常告警到归因分析和效果验证的完整闭环。核心思路是建立多层次监控指标体系，当成本指标触发预警后，自动生成异常报告，由成本优化专员进行数据验证、根因分析、制定改进措施，最终验证优化效果。
@@ -54,8 +56,16 @@ ByteCost 平台实时采集各模块资源消耗数据，生成成本监控仪�
 
 ## 参见
 
-- [[cost-breakdown]] — 成本拆解方法决定了监控指标的粒度
-- [[cost-optimization]] — 监控发现的异常需要优化策略来闭环
-- [[../ops-and-reliability/ops-and-reliability]] — 成本监控与系统运维监控协同运作
-- [[../introduction/bytedance-rag-applications]] — 各业务线成本基线不同，监控阈值需差异化配置
-- [[efficiency-optimization]] — 极致效率优化方向可作为长期降本手段
+- [成本构成与拆解](cost-breakdown.md) — 成本拆解方法决定了监控指标的粒度
+- [成本优化策略](cost-optimization.md) — 监控发现的异常需要优化策略来闭环
+- [系统运维与监控](../ops-and-reliability/ops-and-reliability.md) — 成本监控与系统运维监控协同运作
+- [字节跳动业务线 RAG 应用现状](../introduction/bytedance-rag-applications.md) — 各业务线成本基线不同，监控阈值需差异化配置
+- [效率极致优化](efficiency-optimization.md) — 极致效率优化方向可作为长期降本手段
+
+## 来源与证据
+
+- Evidence: Unverified
+- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
+- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
+- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
+- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)

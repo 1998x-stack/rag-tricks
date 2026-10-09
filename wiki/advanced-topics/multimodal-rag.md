@@ -1,5 +1,7 @@
 # 多模态 RAG
 
+> **证据状态：Unverified。** 本页为历史整理，尚未逐条核验；公司实践、组件名称与精确指标均不能直接作为已证实事实或通用基准。见本页「来源与证据」。
+
 ## 是什么
 
 多模态 RAG 在传统文本 RAG 基础上，扩展支持图片、音频、视频、表格等多种数据类型的统一检索与生成。字节跳动通过自研的 ByteMultiModal-Embedding 模型（基于 CLIP 扩展），将不同模态数据映射到同一 512 维向量空间，实现"文本→图片""图片→文本""文本→音频""文本→视频"等跨模态检索，以及"文本+多模态元素"混合内容生成。
@@ -62,9 +64,17 @@
 
 ## 参见
 
-- [[rag-agent]] — RAG-Agent 集成使用多模态能力处理复杂任务
-- [[future-outlook]] — 多模态是未来四大发展方向之一
-- [[../retrieval/semantic-retrieval]] — 语义检索是跨模态检索的基础
-- [[../indexing/vector-database]] — 多模态向量库需要支持混合数据类型
-- [[../generation/generation]] — 多模态生成需要生成层的特殊支持
-- [[../data-layer/data-layer]] — 多模态数据的采集与预处理
+- [RAG 与 Agent 集成](rag-agent.md) — RAG-Agent 集成使用多模态能力处理复杂任务
+- [总结与展望](future-outlook.md) — 多模态是未来四大发展方向之一
+- [语义检索（向量检索）](../retrieval/semantic-retrieval.md) — 语义检索是跨模态检索的基础
+- [向量数据库构建与管理](../indexing/vector-database.md) — 多模态向量库需要支持混合数据类型
+- [生成层设计与优化](../generation/generation.md) — 多模态生成需要生成层的特殊支持
+- [数据处理与准备](../data-layer/data-layer.md) — 多模态数据的采集与预处理
+
+## 来源与证据
+
+- Evidence: Unverified
+- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
+- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
+- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
+- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)
