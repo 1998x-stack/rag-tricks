@@ -18,8 +18,7 @@ description: 可追溯、可验证、面向生产实践的 RAG 工程知识库
 | **Build**：设计生产 RAG | [系统架构设计](./wiki/architecture/architecture.md) |
 | **Debug**：排查效果/性能问题 | [问题排查入口](#问题排查入口) |
 | **Evaluate**：建立评估与回归体系 | [Evaluation Center](./wiki/evaluation/evaluation.md) |
-| **Decide**：做技术选型 | [设计权衡中心](./contradictory.md) |
-| **Evaluate**：建立评估闭环 | [评估与实验](./wiki/evaluation/evaluation.md) |
+| **Decide**：做技术选型 | [Decision Center](./wiki/decisions/decision-center.md) |
 | **Verify**：核验来源和证据 | [来源与证据规范](./SOURCE_POLICY.md) |
 
 ---
@@ -117,9 +116,9 @@ description: 可追溯、可验证、面向生产实践的 RAG 工程知识库
 
 ---
 
-## 设计权衡中心
+## Decision Center
 
-RAG 中很少存在脱离上下文的“唯一最优解”。现有 [设计权衡汇总](./contradictory.md) 记录了包括以下问题在内的多组选择：
+RAG 中很少存在脱离上下文的“唯一最优解”。[Decision Center](./wiki/decisions/decision-center.md) 记录了包括以下问题在内的多组选择：
 
 - 语义检索 vs 关键词检索；
 - 大模型 vs 小模型；
@@ -128,7 +127,7 @@ RAG 中很少存在脱离上下文的“唯一最优解”。现有 [设计权�
 - 全文上下文 vs 上下文压缩；
 - GPU 独占 vs 资源共享。
 
-后续会把这些条目升级为“约束 → 方案 → 指标 → 风险 → 实验”的决策记录。
+这些主题已经升级为“约束 → 方案 → 指标 → 风险 → 最小实验 → 复审条件”的 Decision Records；旧 `contradictory.md` 路径继续作为兼容入口。
 
 ---
 

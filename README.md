@@ -18,8 +18,7 @@
 | 设计一个生产 RAG 系统 | [系统架构](./wiki/architecture/architecture.md) |
 | 排查检索/生成问题 | [问题排查入口](./index.md#问题排查入口) |
 | 建立评估与回归体系 | [Evaluation Center](./wiki/evaluation/evaluation.md) |
-| 做技术选型与权衡 | [设计权衡](./contradictory.md) |
-| 建立评估与实验流程 | [RAG 评估与实验](./wiki/evaluation/evaluation.md) |
+| 做技术选型与权衡 | [Decision Center](./wiki/decisions/decision-center.md) |
 | 查原始材料与证据状态 | [来源与证据规范](./SOURCE_POLICY.md) |
 
 ## 知识地图
@@ -33,6 +32,7 @@
 | [检索策略与实现](./wiki/retrieval/retrieval.md) | 查询理解、语义/关键词/混合检索、结果处理、评估 |
 | [生成层设计与优化](./wiki/generation/generation.md) | 模型选型、Prompt、质量控制、效率与成本 |
 | [Evaluation Center](./wiki/evaluation/evaluation.md) | 数据集、检索/生成指标、端到端评估、回归门禁、线上实验 |
+| [Decision Center](./wiki/decisions/decision-center.md) | 检索、模型、索引、分块、部署与资源的结构化技术决策 |
 | [业务线落地案例](./wiki/business-cases/business-cases.md) | 业务案例与场景化实践 |
 | [运维与可靠性](./wiki/ops-and-reliability/ops-and-reliability.md) | 监控、自动化运维、应急响应、压测、故障复盘 |
 | [成本与效率](./wiki/cost-and-efficiency/cost-and-efficiency.md) | 成本拆解、优化与监控 |
