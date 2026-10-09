@@ -115,6 +115,7 @@ description: 可追溯、可验证、面向生产实践的 RAG 工程知识库
 | [运维与可靠性](./wiki/ops-and-reliability/ops-and-reliability.md) | 监控、响应、压测、复盘 |
 | [成本与效率](./wiki/cost-and-efficiency/cost-and-efficiency.md) | 成本模型与优化 |
 | [高级专题](./wiki/advanced-topics/advanced-topics.md) | 多模态、Agent、隐私与集成 |
+| [Modern RAG](./wiki/modern-rag/modern-rag.md) | 明确来自原手册之外的现代方法与外部来源 |
 | [Production Readiness](./wiki/production/production-readiness.md) | Observability、安全、恢复、容量、发布门禁 |
 | [Benchmark Standard](./wiki/benchmarks/benchmark-standard.md) | 测试上下文、复现状态与数字引用边界 |
 

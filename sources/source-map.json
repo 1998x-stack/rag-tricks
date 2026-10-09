@@ -59,6 +59,55 @@
       "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
       "verified_at": "2026-09-29",
       "note": "用于生成式 AI 生命周期风险管理框架。"
+    },
+    "external-anthropic-contextual-retrieval": {
+      "title": "Anthropic Engineering · Introducing Contextual Retrieval",
+      "kind": "external-article",
+      "url": "https://www.anthropic.com/engineering/contextual-retrieval",
+      "verified_at": "2026-09-29",
+      "note": "Contextual Embeddings 与 Contextual BM25。"
+    },
+    "external-hyde-paper": {
+      "title": "Precise Zero-Shot Dense Retrieval without Relevance Labels",
+      "kind": "external-paper",
+      "url": "https://arxiv.org/abs/2212.10496",
+      "verified_at": "2026-09-29",
+      "note": "HyDE 原论文。"
+    },
+    "external-self-rag-paper": {
+      "title": "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection",
+      "kind": "external-paper",
+      "url": "https://arxiv.org/abs/2310.11511",
+      "verified_at": "2026-09-29",
+      "note": "Self-RAG 原论文。"
+    },
+    "external-ms-graphrag": {
+      "title": "Microsoft GraphRAG",
+      "kind": "external-project",
+      "url": "https://github.com/microsoft/graphrag",
+      "verified_at": "2026-09-29",
+      "note": "GraphRAG 方法与当前开源项目维护状态。"
+    },
+    "external-sbert-crossencoder": {
+      "title": "SentenceTransformers · CrossEncoder / Retrieve & Re-Rank",
+      "kind": "external-documentation",
+      "url": "https://www.sbert.net/docs/cross_encoder/usage/usage.html",
+      "verified_at": "2026-09-29",
+      "note": "Cross-Encoder reranking 的当前文档。"
+    },
+    "external-sbert-multivector": {
+      "title": "SentenceTransformers · MultiVectorEncoder",
+      "kind": "external-documentation",
+      "url": "https://www.sbert.net/docs/multi_vector_encoder/usage/usage.html",
+      "verified_at": "2026-09-29",
+      "note": "ColBERT-style late interaction / multi-vector retrieval。"
+    },
+    "external-colbert-paper": {
+      "title": "ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT",
+      "kind": "external-paper",
+      "url": "https://arxiv.org/abs/2004.12832",
+      "verified_at": "2026-09-29",
+      "note": "Late Interaction / ColBERT 原论文。"
     }
   },
   "schema_version": 1,
@@ -904,6 +953,61 @@
       "source_refs": [],
       "priority": "normal",
       "reason": "基于 Evaluation Center 的指标定义汇总。"
+    },
+    "wiki/modern-rag/modern-rag.md": {
+      "status": "external",
+      "source_refs": [
+        "external-anthropic-contextual-retrieval",
+        "external-hyde-paper",
+        "external-self-rag-paper",
+        "external-ms-graphrag",
+        "external-sbert-crossencoder",
+        "external-sbert-multivector"
+      ],
+      "priority": "normal",
+      "reason": "Modern RAG 外部知识模块；与 source-manual 证据链隔离。"
+    },
+    "wiki/modern-rag/contextual-retrieval.md": {
+      "status": "external",
+      "source_refs": [
+        "external-anthropic-contextual-retrieval"
+      ],
+      "priority": "normal",
+      "reason": "Modern RAG 外部知识模块；与 source-manual 证据链隔离。"
+    },
+    "wiki/modern-rag/hyde.md": {
+      "status": "external",
+      "source_refs": [
+        "external-hyde-paper"
+      ],
+      "priority": "normal",
+      "reason": "Modern RAG 外部知识模块；与 source-manual 证据链隔离。"
+    },
+    "wiki/modern-rag/self-rag.md": {
+      "status": "external",
+      "source_refs": [
+        "external-self-rag-paper"
+      ],
+      "priority": "normal",
+      "reason": "Modern RAG 外部知识模块；与 source-manual 证据链隔离。"
+    },
+    "wiki/modern-rag/graphrag.md": {
+      "status": "external",
+      "source_refs": [
+        "external-ms-graphrag"
+      ],
+      "priority": "normal",
+      "reason": "Modern RAG 外部知识模块；与 source-manual 证据链隔离。"
+    },
+    "wiki/modern-rag/reranking-late-interaction.md": {
+      "status": "external",
+      "source_refs": [
+        "external-sbert-crossencoder",
+        "external-sbert-multivector",
+        "external-colbert-paper"
+      ],
+      "priority": "normal",
+      "reason": "Modern RAG 外部知识模块；与 source-manual 证据链隔离。"
     }
   }
 }

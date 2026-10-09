@@ -41,6 +41,7 @@
 | [运维与可靠性](./wiki/ops-and-reliability/ops-and-reliability.md) | 监控、自动化运维、应急响应、压测、故障复盘 |
 | [成本与效率](./wiki/cost-and-efficiency/cost-and-efficiency.md) | 成本拆解、优化与监控 |
 | [高级专题](./wiki/advanced-topics/advanced-topics.md) | 多模态、RAG Agent、隐私安全、系统集成 |
+| [Modern RAG](./wiki/modern-rag/modern-rag.md) | Contextual Retrieval、HyDE、Self-RAG、GraphRAG、Reranking / Late Interaction；全部为外部来源 |
 
 ## 内容可信度：先区分“来源”与“推导”
 

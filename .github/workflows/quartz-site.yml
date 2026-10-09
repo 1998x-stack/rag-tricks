@@ -83,6 +83,8 @@ jobs:
           test -f .quartz-engine/public/wiki/benchmarks/benchmark-standard.html
           test -f .quartz-engine/public/wiki/learning/learning-path.html
           test -f .quartz-engine/public/wiki/glossary/glossary.html
+          test -f .quartz-engine/public/wiki/modern-rag/modern-rag.html
+          test -f .quartz-engine/public/wiki/modern-rag/graphrag.html
 
       - name: Upload Pages artifact
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
