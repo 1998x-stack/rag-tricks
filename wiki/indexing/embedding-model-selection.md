@@ -1,5 +1,7 @@
 # 嵌入模型选型与定制
 
+> **证据状态：Unverified。** 本页为历史整理，尚未逐条核验；公司实践、组件名称与精确指标均不能直接作为已证实事实或通用基准。见本页「来源与证据」。
+
 ## 是什么
 
 嵌入模型（Embedding Model）是将文本转换为向量表示的核心组件，其质量直接决定了 RAG 系统的检索准确性上限。字节跳动在实践中围绕"业务适配性"和"效率平衡"构建了完整的模型选型与定制体系：优先选用自研 ByteEmbedding 系列多语言嵌入模型，针对垂直业务场景进行领域微调（如金融、医疗），同时通过模型蒸馏技术实现轻量化适配，满足边缘端和低延迟场景的部署需求。
@@ -48,8 +50,16 @@
 
 ## 参见
 
-- [[vector-generation-strategy]] — 嵌入模型的输出直接影响向量生成策略（分块、维度、精度）
-- [[vector-database]] — 不同嵌入模型的向量维度需与数据库索引类型匹配（如 HNSW 对向量维度有最优范围）
-- [[../data-layer/data-augmentation]] — 数据增强是领域微调的重要前置步骤，可扩大微调数据集
-- [[index-quality-evaluation]] — 嵌入模型效果通过 Recall@k、Precision@k、MAP 指标评估
-- [[../data-layer/text-preprocessing]] — 文本预处理质量直接影响嵌入模型的语义理解效果
+- [向量生成策略](vector-generation-strategy.md) — 嵌入模型的输出直接影响向量生成策略（分块、维度、精度）
+- [向量数据库构建与管理](vector-database.md) — 不同嵌入模型的向量维度需与数据库索引类型匹配（如 HNSW 对向量维度有最优范围）
+- [数据增强](../data-layer/data-augmentation.md) — 数据增强是领域微调的重要前置步骤，可扩大微调数据集
+- [索引质量评估与迭代](index-quality-evaluation.md) — 嵌入模型效果通过 Recall@k、Precision@k、MAP 指标评估
+- [文本预处理](../data-layer/text-preprocessing.md) — 文本预处理质量直接影响嵌入模型的语义理解效果
+
+## 来源与证据
+
+- Evidence: Unverified
+- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
+- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
+- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
+- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)

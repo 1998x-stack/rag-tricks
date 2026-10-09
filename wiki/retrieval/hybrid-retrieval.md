@@ -1,5 +1,7 @@
 # 混合检索
 
+> **证据状态：Unverified。** 本页为历史整理，尚未逐条核验；公司实践、组件名称与精确指标均不能直接作为已证实事实或通用基准。见本页「来源与证据」。
+
 ## 是什么
 
 混合检索是将语义检索（向量检索）和关键词检索（ByteBM25）的结果进行融合，综合两种检索方式的优势，在不同查询场景下获得最优检索效果。字节跳动采用**加权融合**和**重排序融合**两种方式，并支持基于用户查询类型的**动态权重调整**。
@@ -46,8 +48,16 @@
 
 ## 参见
 
-- [[semantic-retrieval]] — 混合检索中的语义组件
-- [[keyword-retrieval]] — 混合检索中的关键词组件
-- [[retrieval-evaluation]] — 混合权重的调优依赖离线评估和 A/B 测试
-- [[result-processing]] — 混合检索后的结果仍需多因素排序优化
-- [[../generation/prompt-engineering]] — 查询类型分类依赖提示工程
+- [语义检索（向量检索）](semantic-retrieval.md) — 混合检索中的语义组件
+- [关键词检索（稀疏检索）](keyword-retrieval.md) — 混合检索中的关键词组件
+- [检索效果评估与调优](retrieval-evaluation.md) — 混合权重的调优依赖离线评估和 A/B 测试
+- [检索结果处理与过滤](result-processing.md) — 混合检索后的结果仍需多因素排序优化
+- [Prompt Engineering 实践](../generation/prompt-engineering.md) — 查询类型分类依赖提示工程
+
+## 来源与证据
+
+- Evidence: Unverified
+- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
+- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
+- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
+- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)

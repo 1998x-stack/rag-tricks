@@ -77,10 +77,18 @@ RAG 系统涉及数据处理、索引构建、检索策略、生成优化、运�
 
 ## 参见
 
-- [[advanced-topics]] 主页面
-- [[multimodal-rag]] 多模态 RAG 进阶
-- [[rag-agent]] RAG-Agent 集成
-- [[system-integration]] 业务系统集成
-- [[../architecture/overview]] 系统架构概述
-- [[../ops-and-reliability/automated-ops]] 自动化运维
-- [[../../contradictory]]
+- [高级专题](advanced-topics.md) 主页面
+- [多模态 RAG](multimodal-rag.md) 多模态 RAG 进阶
+- [RAG 与 Agent 集成](rag-agent.md) RAG-Agent 集成
+- [业务系统深度集成](system-integration.md) 业务系统集成
+- [整体架构概述](../architecture/overview.md) 系统架构概述
+- [自动化运维体系](../ops-and-reliability/automated-ops.md) 自动化运维
+- [矛盾观点汇总](../../contradictory.md)
+
+## 来源与证据
+
+- Evidence: Unverified
+- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
+- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
+- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
+- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)
