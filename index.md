@@ -16,6 +16,7 @@ description: 可追溯、可验证、面向生产实践的 RAG 工程知识库
 |---|---|
 | **Learn**：系统学习 RAG | [学习路径](#学习路径) |
 | **Build**：设计生产 RAG | [系统架构设计](./wiki/architecture/architecture.md) |
+| **Operate**：上线与生产就绪 | [Production Readiness](./wiki/production/production-readiness.md) |
 | **Debug**：排查效果/性能问题 | [问题排查入口](#问题排查入口) |
 | **Evaluate**：建立评估与回归体系 | [Evaluation Center](./wiki/evaluation/evaluation.md) |
 | **Decide**：做技术选型 | [Decision Center](./wiki/decisions/decision-center.md) |
@@ -113,6 +114,7 @@ description: 可追溯、可验证、面向生产实践的 RAG 工程知识库
 | [运维与可靠性](./wiki/ops-and-reliability/ops-and-reliability.md) | 监控、响应、压测、复盘 |
 | [成本与效率](./wiki/cost-and-efficiency/cost-and-efficiency.md) | 成本模型与优化 |
 | [高级专题](./wiki/advanced-topics/advanced-topics.md) | 多模态、Agent、隐私与集成 |
+| [Production Readiness](./wiki/production/production-readiness.md) | Observability、安全、恢复、容量、发布门禁 |
 
 ---
 
