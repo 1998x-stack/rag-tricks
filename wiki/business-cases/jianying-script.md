@@ -1,6 +1,26 @@
+---
+title: 剪映：视频脚本生成与创意辅助
+type: case
+evidence: partial
+verified_at: 2026-09-29
+source_refs:
+  - source-manual
+---
+
 # 剪映：视频脚本生成与创意辅助
 
-> **证据状态：Unverified。** 本页为历史整理，尚未逐条核验；公司实践、组件名称与精确指标均不能直接作为已证实事实或通用基准。见本页「来源与证据」。
+## Case Metadata
+
+| 字段 | 内容 |
+|---|---|
+| Evidence | Partial / Source-reported |
+| Source scope | 《字节跳动 RAG 实践手册》OCR 页标 53–56 |
+| Workload | 创意脚本、素材匹配、跨模态检索、行业规则 |
+| Reproduction | Not reproduced in this repository |
+| Portability | 仅可迁移方法与约束，不直接迁移数值门槛 |
+
+> **Benchmark 边界：** 页面中的用户规模、播放量、素材使用率和创作效率属于来源材料报告值，不作为通用产品 benchmark。 引用这些数字时请同时说明来源场景与复现状态。
+
 
 ## 是什么
 
@@ -132,20 +152,23 @@ ByteVectorDB + 素材索引库架构。
 **创意僵化**：仅检索同领域脚本导致同质化，应通过跨领域创意迁移突破瓶颈。
 **过度依赖大模型**：应选用创意领域微调的中等模型配合检索增强来保证质量。
 
-## 参见
-
-- [业务落地案例](business-cases.md) — 业务落地案例主页面
-- [多模态 RAG](../advanced-topics/multimodal-rag.md) — 多模态 RAG 技术
-- [生成层设计与优化](../generation/generation.md) — 生成层设计与优化
-- [检索策略与实现](../retrieval/retrieval.md) — 检索策略与实现
-- [索引构建与优化](../indexing/indexing.md) — 索引构建与优化
-- [性能压测实践](../ops-and-reliability/performance-testing.md) — 性能压测实践
-- [跨业务线技术复用方案](../ops-and-reliability/tech-reuse-platform.md) — 技术中台复用方案
-
 ## 来源与证据
 
-- Evidence: Unverified
-- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
-- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
-- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
-- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)
+- Evidence: Partial / Source-reported
+- Source: 《字节跳动 RAG 实践手册》原始抽取文本
+- OCR 页标: 53–56
+- Reproduction status: Not reproduced
+- Benchmark policy: [[../benchmarks/benchmark-standard]]
+- Case catalog: [[../cases/case-catalog]]
+
+> 本页验证的是“案例与主要数字可在来源材料中定位”；不代表仓库对企业内部生产数据做了独立外部认证。
+
+## 参见
+
+- [[../business-cases/business-cases]] — 业务落地案例主页面
+- [[../advanced-topics/multimodal-rag]] — 多模态 RAG 技术
+- [[../generation/generation]] — 生成层设计与优化
+- [[../retrieval/retrieval]] — 检索策略与实现
+- [[../indexing/indexing]] — 索引构建与优化
+- [[../ops-and-reliability/performance-testing]] — 性能压测实践
+- [[../ops-and-reliability/tech-reuse-platform]] — 技术中台复用方案

@@ -35,7 +35,8 @@
 | [Evaluation Center](./wiki/evaluation/evaluation.md) | 数据集、检索/生成指标、端到端评估、回归门禁、线上实验 |
 | [Decision Center](./wiki/decisions/decision-center.md) | 检索、模型、索引、分块、部署与资源的结构化技术决策 |
 | [Production Readiness](./wiki/production/production-readiness.md) | Observability、安全、恢复、容量与发布门禁 |
-| [业务线落地案例](./wiki/business-cases/business-cases.md) | 业务案例与场景化实践 |
+| [Benchmark Standard](./wiki/benchmarks/benchmark-standard.md) | 规范案例数字、实验上下文与复现状态 |
+| [业务线落地案例](./wiki/business-cases/business-cases.md) | 业务案例与场景化实践；统一目录见 [Case Catalog](./wiki/cases/case-catalog.md) |
 | [运维与可靠性](./wiki/ops-and-reliability/ops-and-reliability.md) | 监控、自动化运维、应急响应、压测、故障复盘 |
 | [成本与效率](./wiki/cost-and-efficiency/cost-and-efficiency.md) | 成本拆解、优化与监控 |
 | [高级专题](./wiki/advanced-topics/advanced-topics.md) | 多模态、RAG Agent、隐私安全、系统集成 |

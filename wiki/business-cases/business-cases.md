@@ -1,44 +1,59 @@
-# 业务落地案例
+---
+title: 业务落地案例
+type: hub
+evidence: synthesis
+verified_at: 2026-09-29
+source_refs:
+  - source-manual
+---
 
-> **证据状态：Unverified。** 本页为历史整理，尚未逐条核验；公司实践、组件名称与精确指标均不能直接作为已证实事实或通用基准。见本页「来源与证据」。
+# 业务落地案例
 
 ## 概述
 
 RAG 技术在字节跳动各业务线已实现规模化落地，覆盖智能客服、知识库问答、金融研报分析、视频创意辅助等核心场景。本章选取抖音电商、飞书、金融科技、剪映四个典型业务线，详细阐述 RAG 的落地流程、关键优化点与量化业务效果，为其他业务线提供可复用的实践参考。
 
+## 案例使用规则
+
+本目录中的数字属于来源材料的 **Source-reported** 案例结果，除非另有明确复现实验记录，否则不应作为跨业务通用 benchmark。
+
+- 统一案例目录：[[../cases/case-catalog]]
+- Benchmark 规范：[[../benchmarks/benchmark-standard]]
+- 评估方法：[[../evaluation/evaluation]]
+
 ## 详细知识
 
-- [抖音电商：智能客服与商品问答](douyin-ecommerce.md) — 抖音电商智能客服与商品问答：500万日均咨询量，响应时间从5分钟降至300ms
-- [飞书：知识库问答与文档助手](feishu-knowledge.md) — 飞书知识库问答与文档助手：100万+企业客户，5亿文档，召回率从60%提升至92%
-- [金融科技：研报解读与投资问答](fintech-research.md) — 金融科技研报解读与投资问答：日均1万份研报，分析师效率提升6倍
-- [剪映：视频脚本生成与创意辅助](jianying-script.md) — 剪映视频脚本生成与创意辅助：3亿用户，创作效率从3小时降至30分钟
+- [[douyin-ecommerce]] — 抖音电商智能客服与商品问答：500万日均咨询量，响应时间从5分钟降至300ms
+- [[feishu-knowledge]] — 飞书知识库问答与文档助手：100万+企业客户，5亿文档，召回率从60%提升至92%
+- [[fintech-research]] — 金融科技研报解读与投资问答：日均1万份研报，分析师效率提升6倍
+- [[jianying-script]] — 剪映视频脚本生成与创意辅助：3亿用户，创作效率从3小时降至30分钟
 
 ## 核心实践
 
 ### 智能客服场景
 - **场景**：抖音电商每日500万+用户咨询，涵盖商品咨询、订单问题、售后政策
 - **要点**：意图分类 → 实体识别 → 混合检索 → 轻量模型生成 → 质量控制
-- **参见**：[抖音电商：智能客服与商品问答](douyin-ecommerce.md)、[全链路监控体系](../ops-and-reliability/full-stack-monitoring.md)
+- **参见**：[[douyin-ecommerce]]、[[../ops-and-reliability/full-stack-monitoring]]
 
 ### 知识库问答场景
 - **场景**：飞书百万企业客户的文档检索、信息总结、跨文档问答需求
 - **要点**：文档解析 → 多粒度索引 → 表格语义索引 → 权限适配 → 多轮记忆
-- **参见**：[飞书：知识库问答与文档助手](feishu-knowledge.md)、[跨业务线技术复用方案](../ops-and-reliability/tech-reuse-platform.md)
+- **参见**：[[feishu-knowledge]]、[[../ops-and-reliability/tech-reuse-platform]]
 
 ### 金融研报分析场景
 - **场景**：机构客户研报分析、投资问答、风险提示
 - **要点**：研报解析 → 金融领域微调 → 实时数据关联 → 观点冲突分析
-- **参见**：[金融科技：研报解读与投资问答](fintech-research.md)、[系统架构设计](../architecture/architecture.md)
+- **参见**：[[fintech-research]]、[[../architecture/architecture]]
 
 ### 创意辅助场景
 - **场景**：剪映3亿用户的视频脚本生成、素材匹配、创意迁移
 - **要点**：脚本结构化 → 跨模态检索 → 行业规则适配 → 爆款创意迁移
-- **参见**：[剪映：视频脚本生成与创意辅助](jianying-script.md)、[多模态 RAG](../advanced-topics/multimodal-rag.md)
+- **参见**：[[jianying-script]]、[[../advanced-topics/multimodal-rag]]
 
 ## 来源与证据
 
-- Evidence: Unverified
-- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
-- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
-- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
-- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)
+- Evidence: Synthesis
+- Source: 《字节跳动 RAG 实践手册》业务案例章节
+- OCR 页标: 44–56
+- 四个子案例的数字属于 Source-reported；复现状态见各自 Case Metadata。
+- Benchmark policy: [[../benchmarks/benchmark-standard]]

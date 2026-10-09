@@ -813,6 +813,73 @@
       ],
       "priority": "normal",
       "reason": "Production Readiness 模块：外部标准/来源材料与显式工程推导。"
+    },
+    "wiki/business-cases/business-cases.md": {
+      "status": "partial",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "normal",
+      "reason": "业务案例汇总；具体数字由子案例承担来源边界。",
+      "source_page_ranges": [
+        "44-56"
+      ]
+    },
+    "wiki/business-cases/douyin-ecommerce.md": {
+      "status": "partial",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "normal",
+      "reason": "抖音电商案例，主要业务规模、架构和效果数据可在来源材料对应页段定位。",
+      "source_page_ranges": [
+        "44-47"
+      ]
+    },
+    "wiki/business-cases/feishu-knowledge.md": {
+      "status": "partial",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "normal",
+      "reason": "飞书知识库案例，主要规模、检索与效果数据可在来源材料对应页段定位。",
+      "source_page_ranges": [
+        "47-50"
+      ]
+    },
+    "wiki/business-cases/fintech-research.md": {
+      "status": "partial",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "normal",
+      "reason": "金融研报案例，主要架构、效率和效果数据可在来源材料对应页段定位。",
+      "source_page_ranges": [
+        "50-53"
+      ]
+    },
+    "wiki/business-cases/jianying-script.md": {
+      "status": "partial",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "normal",
+      "reason": "剪映脚本案例，主要架构、规模与效果数据可在来源材料对应页段定位。",
+      "source_page_ranges": [
+        "53-56"
+      ]
+    },
+    "wiki/cases/case-catalog.md": {
+      "status": "derived",
+      "source_refs": [],
+      "priority": "normal",
+      "reason": "案例目录与表达规范。"
+    },
+    "wiki/benchmarks/benchmark-standard.md": {
+      "status": "derived",
+      "source_refs": [],
+      "priority": "normal",
+      "reason": "Benchmark 可复现性与上下文规范。"
     }
   }
 }

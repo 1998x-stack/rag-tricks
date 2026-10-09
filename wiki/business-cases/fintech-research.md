@@ -1,6 +1,26 @@
+---
+title: 金融科技：研报解读与投资问答
+type: case
+evidence: partial
+verified_at: 2026-09-29
+source_refs:
+  - source-manual
+---
+
 # 金融科技：研报解读与投资问答
 
-> **证据状态：Unverified。** 本页为历史整理，尚未逐条核验；公司实践、组件名称与精确指标均不能直接作为已证实事实或通用基准。见本页「来源与证据」。
+## Case Metadata
+
+| 字段 | 内容 |
+|---|---|
+| Evidence | Partial / Source-reported |
+| Source scope | 《字节跳动 RAG 实践手册》OCR 页标 50–53 |
+| Workload | 研报解析、金融检索、实时数据关联、风险提示 |
+| Reproduction | Not reproduced in this repository |
+| Portability | 仅可迁移方法与约束，不直接迁移数值门槛 |
+
+> **Benchmark 边界：** 页面中的事实准确率、客户规模、效率与收入数据属于来源材料案例；仓库未提供可复现实验环境。 引用这些数字时请同时说明来源场景与复现状态。
+
 
 ## 是什么
 
@@ -133,20 +153,23 @@ ByteVectorDB + 时序数据库 ByteTimeDB 混合存储。
 **观点冲突处理不当**：不同机构可能有相反观点，应标注差异并分析原因。
 **忽视风险提示**：投资决策回答缺乏风险提示可能导致重大损失。
 
-## 参见
-
-- [业务落地案例](business-cases.md) — 业务落地案例主页面
-- [数据处理与准备](../data-layer/data-layer.md) — 数据处理与准备
-- [检索策略与实现](../retrieval/retrieval.md) — 检索策略与实现
-- [生成层设计与优化](../generation/generation.md) — 生成层设计与优化
-- [跨地域部署方案](../ops-and-reliability/cross-region-deployment.md) — 跨地域部署方案
-- [隐私安全增强](../advanced-topics/privacy-security.md) — 隐私安全增强实践
-- [全链路监控体系](../ops-and-reliability/full-stack-monitoring.md) — 全链路监控体系
-
 ## 来源与证据
 
-- Evidence: Unverified
-- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
-- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
-- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
-- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)
+- Evidence: Partial / Source-reported
+- Source: 《字节跳动 RAG 实践手册》原始抽取文本
+- OCR 页标: 50–53
+- Reproduction status: Not reproduced
+- Benchmark policy: [[../benchmarks/benchmark-standard]]
+- Case catalog: [[../cases/case-catalog]]
+
+> 本页验证的是“案例与主要数字可在来源材料中定位”；不代表仓库对企业内部生产数据做了独立外部认证。
+
+## 参见
+
+- [[../business-cases/business-cases]] — 业务落地案例主页面
+- [[../data-layer/data-layer]] — 数据处理与准备
+- [[../retrieval/retrieval]] — 检索策略与实现
+- [[../generation/generation]] — 生成层设计与优化
+- [[../ops-and-reliability/cross-region-deployment]] — 跨地域部署方案
+- [[../advanced-topics/security-and-privacy]] — 隐私安全增强实践
+- [[../ops-and-reliability/full-stack-monitoring]] — 全链路监控体系
