@@ -17,6 +17,7 @@
 | 系统学习 RAG | [学习路径](./index.md#学习路径) |
 | 设计一个生产 RAG 系统 | [系统架构](./wiki/architecture/architecture.md) |
 | 排查检索/生成问题 | [问题排查入口](./index.md#问题排查入口) |
+| 建立评估与回归体系 | [Evaluation Center](./wiki/evaluation/evaluation.md) |
 | 做技术选型与权衡 | [设计权衡](./contradictory.md) |
 | 建立评估与实验流程 | [RAG 评估与实验](./wiki/evaluation/evaluation.md) |
 | 查原始材料与证据状态 | [来源与证据规范](./SOURCE_POLICY.md) |
@@ -31,7 +32,7 @@
 | [索引构建与优化](./wiki/indexing/indexing.md) | 嵌入模型、向量生成、向量数据库、索引质量 |
 | [检索策略与实现](./wiki/retrieval/retrieval.md) | 查询理解、语义/关键词/混合检索、结果处理、评估 |
 | [生成层设计与优化](./wiki/generation/generation.md) | 模型选型、Prompt、质量控制、效率与成本 |
-| [评估与实验](./wiki/evaluation/evaluation.md) | 指标口径、实验模板、分层排障 |
+| [Evaluation Center](./wiki/evaluation/evaluation.md) | 数据集、检索/生成指标、端到端评估、回归门禁、线上实验 |
 | [业务线落地案例](./wiki/business-cases/business-cases.md) | 业务案例与场景化实践 |
 | [运维与可靠性](./wiki/ops-and-reliability/ops-and-reliability.md) | 监控、自动化运维、应急响应、压测、故障复盘 |
 | [成本与效率](./wiki/cost-and-efficiency/cost-and-efficiency.md) | 成本拆解、优化与监控 |
@@ -65,7 +66,7 @@ git clone https://github.com/1998x-stack/rag-tricks.git
 
 ### GitHub / GitHub Pages
 
-正文与导航统一使用标准 Markdown 链接。Pages 保留 Jekyll Cayman，配置 `jekyll-relative-links` 将 `.md` 相对链接转换为网页地址，并用 `jekyll-optional-front-matter` 处理没有 frontmatter 的历史页面。搜索、反向链接与知识图谱仍是后续工作。
+README 与主要导航使用标准 Markdown 链接，保证 GitHub 可点击。Quartz 构建已经加入工程分支，Web 端支持 wikilink、backlink、全文搜索、Explorer 与知识图谱；部署仅在相关改动按顺序合并到 `main` 后生效。
 
 ## 项目结构
 
@@ -120,7 +121,7 @@ CI 在 Python 3.10 / 3.12 上运行回归测试和严格检查，错误与 warni
 
 1. 完成高风险精确事实的 Claim Audit；
 2. 为核心页面补齐来源页码/证据类型；
-3. 为已建立的 [Evaluation 模块](./wiki/evaluation/evaluation.md)补充真实可复现实验数据；
+3. 持续扩展 Evaluation Center，并把评估门禁接入后续实验资产；
 4. 将“目录式 Wiki”升级为 Learn / Build / Debug / Decide 四类入口；
 5. 在标准链接兼容基础上补充站内搜索、反向链接与知识图谱；持续优化 Quartz 站点的信息架构与体验。
 

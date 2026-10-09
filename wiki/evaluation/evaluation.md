@@ -1,32 +1,94 @@
-# RAG 评估与实验
+---
+title: RAG Evaluation Center
+type: hub
+evidence: external
+verified_at: 2026-09-29
+---
 
-> Evidence: Derived。这是仓库维护者提出的实验流程；指标定义另有外部来源，不代表某公司的内部规范。
+# RAG Evaluation Center
 
-## 从什么开始
+RAG 评估的核心不是得到一个“总分”，而是回答三个问题：
 
-先记录当前系统的基线，再改变一个变量。把“知识不存在”“检索漏召回”“证据被截断”“生成未遵循证据”分开统计，才能知道优化该落在哪一层。
+1. **哪里坏了？** 数据、检索、重排、上下文还是生成？
+2. **改动真的更好吗？** 是否在同一测试集、同一约束和同一成本口径下改善？
+3. **离线提升能否转化为线上收益？** 是否改善真实任务成功率，而不是只优化代理指标？
 
-| 任务 | 入口 | 产物 |
-|---|---|---|
-| 建立统一指标口径 | [指标与计分边界](metrics.md) | 分母、排除项、聚合方式 |
-| 对比两个方案 | [离线实验协议](experiment-protocol.md) | 固定测试集、配置、逐条结果 |
-| 回答错误或性能退化 | [分层排障流程](troubleshooting.md) | 可复现失败样本与验证实验 |
-| 理解现有检索链路 | [检索效果评估](../retrieval/retrieval-evaluation.md) | 检索阶段诊断 |
-| 评估生成回答 | [生成层评估](../generation/generation-evaluation.md) | 证据支持、完整性与拒答判定 |
+## 分层评估模型
 
-## 最小闭环
+    Evaluation Dataset
+          ↓
+    Retrieval Evaluation
+          ↓
+    Context / Reranking Evaluation
+          ↓
+    Generation Evaluation
+          ↓
+    End-to-End Evaluation
+          ↓
+    Regression Gate
+          ↓
+    Online Evaluation
 
-1. 定义任务：谁提问、可访问哪些资料、什么时间点的知识、什么情况应拒答。
-2. 冻结语料快照和带版本的测试集；分开开发集与留出集。
-3. 保留逐条查询的检索结果、最终上下文、回答、引用、耗时和配置。
-4. 对照基线分析总体指标与困难切片，人工检查退化样本。
-5. 预先写明上线门槛、灰度范围和回滚条件，保存实验结论。
+### 检索层
 
-不要求所有指标同时提高：主指标可以改善，保护指标必须满足事先约定的边界。绝对提升和相对提升分开写，例如从 0.80 到 0.84 是提升 4 个百分点、相对提升 5%；此处仅为算术示例。
+关注“正确证据有没有被找到、排在什么位置”。核心指标包括 Recall@K、Precision@K、Hit Rate@K、MRR、nDCG@K。
+
+见 [[retrieval-metrics]]。
+
+### 生成层
+
+关注“回答是否基于证据、是否回答了问题、是否遗漏关键信息”。核心维度包括 Faithfulness / Groundedness、Answer relevance、Completeness、Correctness、Citation correctness。
+
+见 [[generation-metrics]]。
+
+### 系统层
+
+关注生产属性：P50/P95/P99 latency、error rate、throughput、tokens/query、cost/query、cache hit rate、index freshness。
+
+见 [[end-to-end-evaluation]]。
+
+### 业务层
+
+最终需要回到业务结果，例如 Task Success Rate、Resolution Rate、Escalation Rate、CSAT、human override rate。
+
+## 推荐工作流
+
+    建立测试集
+      ↓
+    冻结 baseline
+      ↓
+    运行分层评估
+      ↓
+    定位瓶颈
+      ↓
+    单变量改动
+      ↓
+    回归测试
+      ↓
+    小流量线上验证
+      ↓
+    推广 / 回滚
+
+## 不要只看一个指标
+
+例如 Recall@10 提升并不意味着最终回答一定更好：Top-k 增大可能提高召回，同时引入更多噪声；reranker 可能提升排序，却增加延迟；更长上下文可能提高覆盖率，却降低生成注意力质量；更强模型可能提高答案质量，却显著增加成本。
+
+因此评估结果至少应同时包含 **quality / latency / cost** 三个维度。
+
+## 详细页面
+
+- [[evaluation-dataset]] — 如何构建可复用评测集
+- [[retrieval-metrics]] — 检索指标与适用条件
+- [[generation-metrics]] — 生成质量与引用质量
+- [[end-to-end-evaluation]] — 端到端质量、延迟、成本
+- [[regression-testing]] — 每次改动的质量门禁
+- [[online-evaluation]] — A/B、灰度与真实业务指标
+
+已有专题：[[../retrieval/retrieval-evaluation]]、[[../generation/generation-evaluation]]。
 
 ## 来源与证据
 
-- Evidence: Derived
-- 本页是工程流程建议，不包含历史业务效果承诺。
-- 指标外部依据见[指标与计分边界](metrics.md#来源与证据)。
-- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)
+- Evidence: External + Derived
+- Microsoft Learn 的 RAG evaluator 文档将检索过程评估与系统级 groundedness / relevance / completeness 分开。
+- Microsoft Azure Architecture Center 的 RAG 检索指南列出 Precision@K、Recall@K 与 MRR 等经典 IR 指标。
+- 本页的分层框架与上线门禁结构属于仓库的工程化整理，不代表原始《字节跳动 RAG 实践手册》的原文结构。
