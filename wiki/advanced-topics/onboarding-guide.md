@@ -1,5 +1,7 @@
 # 新手工程师入门指南
 
+> **证据状态：Unverified。** 本页为历史整理，尚未逐条核验；公司实践、组件名称与精确指标均不能直接作为已证实事实或通用基准。见本页「来源与证据」。
+
 ## 是什么
 
 字节跳动为帮助新入职工程师快速掌握 RAG 技术栈而编写的系统化入门指南，涵盖 3 个月学习路径、常见问题与解决方案、学习资源与支持渠道。目标是让新手在 3 个月内可独立参与业务线 RAG 项目。
@@ -74,10 +76,18 @@ RAG 系统涉及数据处理、索引构建、检索策略、生成优化、运�
 
 ## 参见
 
-- [[advanced-topics]] 主页面
-- [[multimodal-rag]] 多模态 RAG 进阶
-- [[rag-agent]] RAG-Agent 集成
-- [[system-integration]] 业务系统集成
-- [[../architecture/overview]] 系统架构概述
-- [[../ops-and-reliability/automated-ops]] 自动化运维
-- [[../../contradictory]]
+- [高级专题](advanced-topics.md) 主页面
+- [多模态 RAG](multimodal-rag.md) 多模态 RAG 进阶
+- [RAG 与 Agent 集成](rag-agent.md) RAG-Agent 集成
+- [业务系统深度集成](system-integration.md) 业务系统集成
+- [整体架构概述](../architecture/overview.md) 系统架构概述
+- [自动化运维体系](../ops-and-reliability/automated-ops.md) 自动化运维
+- [矛盾观点汇总](../../contradictory.md)
+
+## 来源与证据
+
+- Evidence: Unverified
+- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
+- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
+- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
+- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)

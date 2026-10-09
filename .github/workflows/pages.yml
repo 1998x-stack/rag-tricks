@@ -1,0 +1,72 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+      - name: Install content checker
+        run: python -m pip install -r requirements-dev.txt
+      - name: Validate sources before publication
+        run: |
+          python -m unittest discover -s tests -v
+          python scripts/quality_check.py --strict
+          python scripts/check_exports.py
+      - name: Validate EPUB standard
+        env:
+          EPUBCHECK_SHA256: 33350c61038e71dfb3d45a76aed04bf5481e6d5500cb780f6e98db8bbd15a28c
+        run: |
+          curl --fail --location --retry 3 --output "$RUNNER_TEMP/epubcheck.zip" https://github.com/w3c/epubcheck/releases/download/v5.4.0/epubcheck-5.4.0.zip
+          echo "$EPUBCHECK_SHA256  $RUNNER_TEMP/epubcheck.zip" | sha256sum --check -
+          unzip -q "$RUNNER_TEMP/epubcheck.zip" -d "$RUNNER_TEMP/epubcheck"
+          java -jar "$RUNNER_TEMP/epubcheck/epubcheck-5.4.0/epubcheck.jar" downloads/rag-tricks-handbook.epub --failonwarnings
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Build Jekyll site
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Validate rendered navigation and downloads
+        run: |
+          python scripts/check_site.py _site --baseurl /rag-tricks
+          test -s _site/downloads/rag-tricks-handbook.epub
+          test -s _site/downloads/rag-tricks-detailed.xmind
+      - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
