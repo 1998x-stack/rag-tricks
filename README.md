@@ -6,9 +6,11 @@
 [![Obsidian](https://img.shields.io/badge/Obsidian-兼容-7C3AED)](https://obsidian.md)
 [![Content Quality](https://github.com/1998x-stack/rag-tricks/actions/workflows/content-quality.yml/badge.svg)](https://github.com/1998x-stack/rag-tricks/actions/workflows/content-quality.yml)
 
+[下载 EPUB 电子书与详细 XMind 导图](./downloads/index.md) · [部署与维护说明](./docs/github-pages.md)
+
 ## 从这里开始
 
-这个仓库同时服务三种使用方式：
+这个仓库按使用目标提供以下入口：
 
 | 目标 | 推荐入口 |
 |---|---|
@@ -17,6 +19,7 @@
 | 排查检索/生成问题 | [问题排查入口](./index.md#问题排查入口) |
 | 建立评估与回归体系 | [Evaluation Center](./wiki/evaluation/evaluation.md) |
 | 做技术选型与权衡 | [设计权衡](./contradictory.md) |
+| 建立评估与实验流程 | [RAG 评估与实验](./wiki/evaluation/evaluation.md) |
 | 查原始材料与证据状态 | [来源与证据规范](./SOURCE_POLICY.md) |
 
 ## 知识地图
@@ -53,7 +56,7 @@
 
 ### Obsidian
 
-仓库保留 Obsidian 风格的 `[[wikilinks]]`，适合作为本地知识库使用：
+正文使用 Obsidian、GitHub 均可识别的标准 Markdown 相对链接，可作为本地知识库使用：
 
 ```bash
 git clone https://github.com/1998x-stack/rag-tricks.git
@@ -86,15 +89,20 @@ rag-tricks/
 
 ## 质量保障
 
-每次 PR 会自动执行内容检查：
+使用 Python 3.10+，首次运行先创建环境并安装固定版本依赖：
 
-- 标准 Markdown 相对链接是否指向存在的文件；
-- 来源登记文件是否合法、是否引用存在的页面；
-- 重复一级标题提示；
-- 未解析的 Obsidian wikilink提示；
-- 含大量数字指标但缺少“来源与证据”章节的页面提示。
+```bash
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements-dev.txt
+.venv/bin/python -m unittest discover -s tests -v
+.venv/bin/python scripts/quality_check.py --strict
+```
 
-当前 CI 对历史遗留的 wikilink 与数字证据问题先采用 **warning**，避免一次性阻断全部内容；新增/修改内容应主动遵循证据规范。
+检查器解析 Markdown，跳过代码示例与生成目录；检查文件/图片/引用式链接、中文与重复标题锚点、来源登记和正文状态一致性、知识页可达性。支持 `--json` 输出机器可读报告与 `--root` 指定仓库。
+
+CI 在 Python 3.10 / 3.12 上运行回归测试和严格检查，错误与 warning 都阻止通过。检查通过只表示结构和登记一致，**不代表内容事实已验证**。当前历史知识页仍保留 Unverified 状态。
+
+实现范围与限制见[维护说明](./docs/maintenance.md)，本次问题分析见[项目审计](./docs/project-review.md)，原文抽样见[Claim 审计](./sources/claim-audit.md)。
 
 ## 贡献原则
 
@@ -115,7 +123,7 @@ rag-tricks/
 2. 为核心页面补齐来源页码/证据类型；
 3. 持续扩展 Evaluation Center，并把评估门禁接入后续实验资产；
 4. 将“目录式 Wiki”升级为 Learn / Build / Debug / Decide 四类入口；
-5. 持续优化 Quartz 站点的信息架构、搜索与知识图谱体验。
+5. 在标准链接兼容基础上补充站内搜索、反向链接与知识图谱；持续优化 Quartz 站点的信息架构与体验。
 
 ## 版权与来源说明
 

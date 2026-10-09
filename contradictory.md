@@ -1,5 +1,7 @@
 # 矛盾观点汇总
 
+> **证据状态：Unverified。** 本页为历史整理，尚未逐条核验；公司实践、组件名称与精确指标均不能直接作为已证实事实或通用基准。见本页「来源与证据」。
+
 RAG 系统设计中存在多处需要权衡的技术决策。以下按主题分类记录。
 
 ---
@@ -13,7 +15,7 @@ RAG 系统设计中存在多处需要权衡的技术决策。以下按主题分�
 
 **分析**: 核心分歧在于查询类型。字节的实践是"关键词检索为主，语义检索 fallback"——先关键词检索，相似度得分低于 0.3 时触发语义检索。混合检索（加权融合 0.6:0.4 或重排序融合）是折中方案，MAP 可提升 9%。
 
-> 参见: [[wiki/retrieval/hybrid-retrieval|混合检索]], [[wiki/retrieval/semantic-retrieval|语义检索]], [[wiki/retrieval/keyword-retrieval|关键词检索]]
+> 参见: [混合检索](wiki/retrieval/hybrid-retrieval.md), [语义检索](wiki/retrieval/semantic-retrieval.md), [关键词检索](wiki/retrieval/keyword-retrieval.md)
 
 ---
 
@@ -26,7 +28,7 @@ RAG 系统设计中存在多处需要权衡的技术决策。以下按主题分�
 
 **分析**: 不存在"最好"的模型，只有"最适合场景"的模型。字节采用三维选型框架（业务需求 × 模型能力 × 资源成本），高精度场景用大模型，高并发低成本场景用小模型。非核心场景可通过 INT8 量化将 7B 模型压缩，在质量损失 < 3% 的前提下显存降低 75%。
 
-> 参见: [[wiki/generation/model-selection|模型选型]], [[wiki/generation/generation-efficiency|效率与成本]]
+> 参见: [模型选型](wiki/generation/model-selection.md), [效率与成本](wiki/generation/generation-efficiency.md)
 
 ---
 
@@ -39,7 +41,7 @@ RAG 系统设计中存在多处需要权衡的技术决策。以下按主题分�
 
 **分析**: 维度选择取决于业务对误检率的容忍度。基础场景 768 维即可满足 Recall@10 ≥ 90% 的需求；法律、医疗等误检代价高的场景用 1024 维。没有绝对的最优维度。
 
-> 参见: [[wiki/indexing/vector-generation-strategy|向量生成策略]]
+> 参见: [向量生成策略](wiki/indexing/vector-generation-strategy.md)
 
 ---
 
@@ -52,7 +54,7 @@ RAG 系统设计中存在多处需要权衡的技术决策。以下按主题分�
 
 **分析**: 两者并存而非互斥。实时更新用于高频变化的热数据（内存索引，阈值 100 万条），离线批量构建用于稳定的大规模历史数据。关键是设置内存索引阈值、读写分离和原子切换。
 
-> 参见: [[wiki/indexing/vector-database|向量数据库]], [[wiki/ops-and-reliability/automated-ops|自动化运维]]
+> 参见: [向量数据库](wiki/indexing/vector-database.md), [自动化运维](wiki/ops-and-reliability/automated-ops.md)
 
 ---
 
@@ -65,7 +67,7 @@ RAG 系统设计中存在多处需要权衡的技术决策。以下按主题分�
 
 **分析**: 查询意图决定了检索策略。字节通过 LLM 意图分类将查询分为"需要检索"/"无需检索"两类，事实查询无条件触发，创意查询条件触发。这平衡了准确性与成本。
 
-> 参见: [[wiki/retrieval/retrieval-trigger|检索触发策略]]
+> 参见: [检索触发策略](wiki/retrieval/retrieval-trigger.md)
 
 ---
 
@@ -78,7 +80,7 @@ RAG 系统设计中存在多处需要权衡的技术决策。以下按主题分�
 
 **分析**: 向量精度压缩是成本与效果的经典平衡。字节默认使用 FP16（准确率损失 < 2%，远低于业务可接受的 5% 误差阈值）。超大规模向量库（10 亿+）进一步采用 INT8 标量量化，通过 10 万条样本的量化校准控制损失 < 3%。
 
-> 参见: [[wiki/indexing/vector-generation-strategy|向量生成策略]], [[wiki/cost-and-efficiency/cost-optimization|成本优化]]
+> 参见: [向量生成策略](wiki/indexing/vector-generation-strategy.md), [成本优化](wiki/cost-and-efficiency/cost-optimization.md)
 
 ---
 
@@ -91,7 +93,7 @@ RAG 系统设计中存在多处需要权衡的技术决策。以下按主题分�
 
 **分析**: 固定分块的朴素性在实际业务中代价很大——飞书从固定分块切换到动态分块后，召回率从 82% 提升至 91%。动态分块虽然实现复杂，但对于长文档、结构复杂的场景是必要投入。
 
-> 参见: [[wiki/indexing/vector-generation-strategy|向量生成策略]]
+> 参见: [向量生成策略](wiki/indexing/vector-generation-strategy.md)
 
 ---
 
@@ -104,7 +106,7 @@ RAG 系统设计中存在多处需要权衡的技术决策。以下按主题分�
 
 **分析**: 上下文窗口有限时（尤其小模型），全部传入会导致注意力衰减。字节实践：检索片段超过 1000 字时，先通过云雀-Tiny 压缩为核心信息，再传入生成模型。这使提示长度减少 60%，且对数据引用准确率提升 35%。
 
-> 参见: [[wiki/generation/prompt-engineering|Prompt Engineering]]
+> 参见: [Prompt Engineering](wiki/generation/prompt-engineering.md)
 
 ---
 
@@ -117,7 +119,7 @@ RAG 系统设计中存在多处需要权衡的技术决策。以下按主题分�
 
 **分析**: 字节的实践是"通用组件中台化 + 业务配置接口化"。中台提供核心能力（复用率 80%），业务线通过配置接口定制（如金融开启"研报图表提取"模式）。关键是组件的向后兼容和定期迭代机制。
 
-> 参见: [[wiki/ops-and-reliability/tech-reuse-platform|技术复用方案]]
+> 参见: [技术复用方案](wiki/ops-and-reliability/tech-reuse-platform.md)
 
 ---
 
@@ -130,7 +132,7 @@ RAG 系统设计中存在多处需要权衡的技术决策。以下按主题分�
 
 **分析**: 灾备等级与业务等级对应。P0 级核心业务（抖音客服、飞书知识库）必须多区域部署；P2/P3 级非核心业务单区域即可。多区域成本主要是跨地域专线（约 10 元/GB），需要根据业务收益权衡。
 
-> 参见: [[wiki/ops-and-reliability/cross-region-deployment|跨地域部署]], [[wiki/ops-and-reliability/incident-response|应急响应]]
+> 参见: [跨地域部署](wiki/ops-and-reliability/cross-region-deployment.md), [应急响应](wiki/ops-and-reliability/incident-response.md)
 
 ---
 
@@ -143,7 +145,7 @@ RAG 系统设计中存在多处需要权衡的技术决策。以下按主题分�
 
 **分析**: 字节采用优先级调度 + 动态扩缩容策略。高优业务独占资源，中低优业务共享资源并在高优空闲时抢占。结合 ARIMA+LSTM 流量预测的自动扩缩容，资源成本节省 45%。
 
-> 参见: [[wiki/generation/generation-efficiency|效率与成本]], [[wiki/cost-and-efficiency/cost-optimization|成本优化]]
+> 参见: [效率与成本](wiki/generation/generation-efficiency.md), [成本优化](wiki/cost-and-efficiency/cost-optimization.md)
 
 ---
 
@@ -156,4 +158,12 @@ RAG 系统设计中存在多处需要权衡的技术决策。以下按主题分�
 
 **分析**: 两者不是替代关系而是协同关系。字节的实践是"按场景选择侧重"——封闭领域、术语密集的场景（金融）侧重模型微调；开放领域、知识快速变化的场景（客服）侧重检索语料库。最有效的方案是两者结合。
 
-> 参见: [[wiki/generation/model-selection|模型选型]], [[wiki/indexing/indexing|索引构建]]
+> 参见: [模型选型](wiki/generation/model-selection.md), [索引构建](wiki/indexing/indexing.md)
+
+## 来源与证据
+
+- Evidence: Unverified
+- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
+- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
+- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
+- [来源规范](SOURCE_POLICY.md) · [核验登记](sources/source-map.json)
