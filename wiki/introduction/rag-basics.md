@@ -1,5 +1,7 @@
 # RAG 基本原理
 
+> **证据状态：Unverified。** 本页为历史整理，尚未逐条核验；公司实践、组件名称与精确指标均不能直接作为已证实事实或通用基准。见本页「来源与证据」。
+
 ## 是什么
 
 检索增强生成（Retrieval-Augmented Generation, RAG）是一种让大语言模型在回答问题时能够参考外部知识库中信息的技术范式。其核心思想可以类比为人类在考试时查阅参考资料——不是仅仅依靠记忆作答，而是借助外部资料辅助判断。这种方法有效解决了大语言模型的两个固有缺陷：对训练数据截止日期之后的知识缺乏了解，以及在没有足够依据时容易产生"幻觉"。
@@ -75,10 +77,18 @@ RAG 系统的三个步骤在工程实践中并不是线性执行的，而是存�
 
 ## 参见
 
-- [[rag-vs-finetuning]] — RAG 与 Fine-tuning 在解决知识更新问题上的不同思路
-- [[rag-vs-ir]] — 理解 RAG 如何超越传统信息检索的能力边界
-- [[../architecture/overview]] — RAG 系统的四层架构设计，从系统层面理解三步流程
-- [[../architecture/retrieval-layer]] — 检索层中余弦相似度与 BM25 的具体实现
-- [[../architecture/generation-layer]] — Prompt Engineering 和上下文管理的生成层实践
-- [[../architecture/index-layer]] — 嵌入模型选型和向量数据库构建的索引层细节
-- [[../../contradictory]] — 召回率与延迟之间的设计权衡
+- [RAG vs Fine-tuning](rag-vs-finetuning.md) — RAG 与 Fine-tuning 在解决知识更新问题上的不同思路
+- [RAG vs 信息检索](rag-vs-ir.md) — 理解 RAG 如何超越传统信息检索的能力边界
+- [整体架构概述](../architecture/overview.md) — RAG 系统的四层架构设计，从系统层面理解三步流程
+- [检索层设计](../architecture/retrieval-layer.md) — 检索层中余弦相似度与 BM25 的具体实现
+- [生成层设计](../architecture/generation-layer.md) — Prompt Engineering 和上下文管理的生成层实践
+- [索引层设计](../architecture/index-layer.md) — 嵌入模型选型和向量数据库构建的索引层细节
+- [矛盾观点汇总](../../contradictory.md) — 召回率与延迟之间的设计权衡
+
+## 来源与证据
+
+- Evidence: Unverified
+- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
+- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
+- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
+- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)

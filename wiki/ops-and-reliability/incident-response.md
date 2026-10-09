@@ -1,5 +1,7 @@
 # 应急响应机制
 
+> **证据状态：Unverified。** 本页为历史整理，尚未逐条核验；公司实践、组件名称与精确指标均不能直接作为已证实事实或通用基准。见本页「来源与证据」。
+
 ## 是什么
 
 应急响应机制是字节跳动为 RAG 系统制定的
@@ -119,9 +121,17 @@ P0/P1 级故障 24 小时内必须启动复盘。
 
 ## 参见
 
-- [[../ops-and-reliability/ops-and-reliability]] — 系统运维与监控主页面
-- [[../ops-and-reliability/full-stack-monitoring]] — 全链路监控体系
-- [[../ops-and-reliability/automated-ops]] — 自动化运维体系
-- [[../ops-and-reliability/cross-region-deployment]] — 跨地域部署方案
-- [[../ops-and-reliability/failure-postmortem]] — 故障复盘与经验沉淀
-- [[../ops-and-reliability/performance-testing]] — 性能压测实践
+- [系统运维与监控](ops-and-reliability.md) — 系统运维与监控主页面
+- [全链路监控体系](full-stack-monitoring.md) — 全链路监控体系
+- [自动化运维体系](automated-ops.md) — 自动化运维体系
+- [跨地域部署方案](cross-region-deployment.md) — 跨地域部署方案
+- [故障复盘与经验沉淀](failure-postmortem.md) — 故障复盘与经验沉淀
+- [性能压测实践](performance-testing.md) — 性能压测实践
+
+## 来源与证据
+
+- Evidence: Unverified
+- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
+- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
+- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
+- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)

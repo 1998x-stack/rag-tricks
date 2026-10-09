@@ -1,5 +1,7 @@
 # 跨业务线技术复用方案
 
+> **证据状态：Unverified。** 本页为历史整理，尚未逐条核验；公司实践、组件名称与精确指标均不能直接作为已证实事实或通用基准。见本页「来源与证据」。
+
 ## 是什么
 
 跨业务线技术复用方案（RAG 技术中台）是字节跳动为避免
@@ -112,10 +114,18 @@
 
 ## 参见
 
-- [[../ops-and-reliability/ops-and-reliability]] — 运维与监控主页面
-- [[../ops-and-reliability/automated-ops]] — 自动化运维体系
-- [[../data-layer/data-layer]] — 数据处理与准备
-- [[../indexing/indexing]] — 索引构建与优化
-- [[../retrieval/retrieval]] — 检索策略与实现
-- [[../generation/generation]] — 生成层设计与优化
-- [[../architecture/architecture]] — 系统架构设计
+- [系统运维与监控](ops-and-reliability.md) — 运维与监控主页面
+- [自动化运维体系](automated-ops.md) — 自动化运维体系
+- [数据处理与准备](../data-layer/data-layer.md) — 数据处理与准备
+- [索引构建与优化](../indexing/indexing.md) — 索引构建与优化
+- [检索策略与实现](../retrieval/retrieval.md) — 检索策略与实现
+- [生成层设计与优化](../generation/generation.md) — 生成层设计与优化
+- [系统架构设计](../architecture/architecture.md) — 系统架构设计
+
+## 来源与证据
+
+- Evidence: Unverified
+- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
+- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
+- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
+- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)

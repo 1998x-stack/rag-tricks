@@ -1,5 +1,7 @@
 # RAG vs 信息检索
 
+> **证据状态：Unverified。** 本页为历史整理，尚未逐条核验；公司实践、组件名称与精确指标均不能直接作为已证实事实或通用基准。见本页「来源与证据」。
+
 ## 是什么
 
 信息检索（Information Retrieval, IR）是传统的信息获取技术，用户输入查询关键词，系统返回相关文档列表。典型的 IR 系统包括搜索引擎、数据库查询系统等。其核心是计算查询与文档之间的词汇级匹配，基于 TF-IDF、BM25 等算法。IR 系统擅长处理的是"精确匹配"场景——给定一组关键词，找到包含这些关键词的文档。
@@ -73,8 +75,16 @@ RAG 可以理解为 IR 的进化版本——它在传统检索的基础上增加
 
 ## 参见
 
-- [[rag-basics]] — RAG 的三步流程：索引、检索、生成
-- [[rag-vs-finetuning]] — 从另一个维度理解 RAG 的技术定位
-- [[../architecture/retrieval-layer]] — 检索层的算法实现与混合策略
-- [[../architecture/overview]] — 检索在四层架构中的位置
-- [[../../contradictory]] — 稀疏检索（BM25）与稠密检索（向量）的取舍
+- [RAG 基本原理](rag-basics.md) — RAG 的三步流程：索引、检索、生成
+- [RAG vs Fine-tuning](rag-vs-finetuning.md) — 从另一个维度理解 RAG 的技术定位
+- [检索层设计](../architecture/retrieval-layer.md) — 检索层的算法实现与混合策略
+- [整体架构概述](../architecture/overview.md) — 检索在四层架构中的位置
+- [矛盾观点汇总](../../contradictory.md) — 稀疏检索（BM25）与稠密检索（向量）的取舍
+
+## 来源与证据
+
+- Evidence: Unverified
+- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
+- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
+- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
+- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)

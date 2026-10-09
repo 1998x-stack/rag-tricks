@@ -1,5 +1,4 @@
 {
-  "schema_version": 1,
   "statuses": [
     "verified",
     "partial",
@@ -13,6 +12,18 @@
       "kind": "primary-material",
       "redistribution_status": "unknown",
       "note": "仓库内存在 PDF 与全文抽取；具体发布来源与再分发授权仍需独立核验。"
+    },
+    "stanford-ir-evaluation": {
+      "title": "Introduction to Information Retrieval — Evaluation",
+      "kind": "external",
+      "url": "https://nlp.stanford.edu/IR-book/html/htmledition/evaluation-in-information-retrieval-1.html",
+      "accessed_at": "2026-10-04"
+    },
+    "microsoft-rag-evaluators": {
+      "title": "Microsoft Foundry — RAG evaluators",
+      "kind": "external",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/evaluation-evaluators/rag-evaluators",
+      "accessed_at": "2026-10-04"
     },
     "external-ms-rag-evaluators": {
       "title": "Microsoft Foundry · RAG evaluators",
@@ -99,6 +110,7 @@
       "note": "Late Interaction / ColBERT 原论文。"
     }
   },
+  "schema_version": 1,
   "pages": {
     "contradictory.md": {
       "status": "derived",
@@ -164,6 +176,483 @@
       ],
       "priority": "medium",
       "reason": "包含公司级标准架构、默认参数与当前部署方式等表述。"
+    },
+    "wiki/advanced-topics/advanced-topics.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/advanced-topics/onboarding-guide.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/advanced-topics/multimodal-rag.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/advanced-topics/privacy-security.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/advanced-topics/rag-agent.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/advanced-topics/system-integration.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/introduction/rag-basics.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/introduction/rag-vs-ir.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/introduction/introduction.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/introduction/rag-vs-finetuning.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/architecture/architecture.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/architecture/index-layer.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/architecture/retrieval-layer.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/architecture/data-layer.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/architecture/generation-layer.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/retrieval/retrieval.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/retrieval/retrieval-evaluation.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/retrieval/hybrid-retrieval.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/retrieval/query-understanding.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/retrieval/result-processing.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/retrieval/semantic-retrieval.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/retrieval/retrieval-trigger.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/retrieval/keyword-retrieval.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/ops-and-reliability/performance-testing.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/ops-and-reliability/automated-ops.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/ops-and-reliability/full-stack-monitoring.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/ops-and-reliability/ops-and-reliability.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/ops-and-reliability/incident-response.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/ops-and-reliability/cross-region-deployment.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/ops-and-reliability/tech-reuse-platform.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/indexing/index-quality-evaluation.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。",
+      "audit_note": "已修正局部指标口径；其余公司实践与数值仍待逐条核验，见 sources/claim-audit.md。"
+    },
+    "wiki/indexing/embedding-model-selection.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/indexing/vector-generation-strategy.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/indexing/indexing.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/indexing/vector-database.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/indexing/index-performance-optimization.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/cost-and-efficiency/efficiency-optimization.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/cost-and-efficiency/cost-monitoring.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/cost-and-efficiency/cost-breakdown.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/cost-and-efficiency/cost-and-efficiency.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/generation/generation-evaluation.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。",
+      "audit_note": "已修正局部指标口径；其余公司实践与数值仍待逐条核验，见 sources/claim-audit.md。"
+    },
+    "wiki/generation/generation-quality.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。",
+      "audit_note": "已修正局部指标口径；其余公司实践与数值仍待逐条核验，见 sources/claim-audit.md。"
+    },
+    "wiki/generation/model-selection.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/generation/generation-efficiency.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/generation/generation.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/generation/prompt-engineering.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/data-layer/data-collection-cleaning.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/data-layer/data-layer.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/data-layer/data-security.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/data-layer/text-preprocessing.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/data-layer/data-augmentation.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/data-layer/data-annotation.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/business-cases/fintech-research.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/business-cases/jianying-script.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/business-cases/business-cases.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/business-cases/douyin-ecommerce.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/business-cases/feishu-knowledge.md": {
+      "status": "needs_verification",
+      "source_refs": [
+        "source-manual"
+      ],
+      "priority": "medium",
+      "reason": "历史整理尚未逐条核验，正文已明确证据边界。"
+    },
+    "wiki/evaluation/troubleshooting.md": {
+      "status": "derived",
+      "source_refs": [],
+      "reason": "维护者提出的实验与排障流程，不宣称历史业务效果。"
+    },
+    "wiki/evaluation/experiment-protocol.md": {
+      "status": "derived",
+      "source_refs": [],
+      "reason": "维护者提出的实验与排障流程，不宣称历史业务效果。"
+    },
+    "wiki/evaluation/metrics.md": {
+      "status": "external",
+      "source_refs": [
+        "stanford-ir-evaluation",
+        "microsoft-rag-evaluators"
+      ],
+      "reason": "指标依据外部官方资料，工程协议明确标为 Derived。"
     },
     "wiki/evaluation/evaluation.md": {
       "status": "external",
