@@ -62,12 +62,12 @@ For decision/tradeoff pages, explicitly include constraints, alternatives, evalu
 
 The repository currently supports two audiences:
 
-- Obsidian users: `[[wikilinks]]` are allowed.
+- Obsidian users: standard relative Markdown links are supported.
 - GitHub / Pages users: important navigation paths should also use standard Markdown links.
 
 Do not assume Jekyll Cayman renders Obsidian wikilinks.
 
-For important entry pages such as `README.md` and `index.md`, prefer standard Markdown links.
+Use standard Markdown links throughout the knowledge base. Wikilinks in prose trigger the strict gate; code examples are ignored.
 
 ## Adding or changing factual content
 
@@ -83,21 +83,16 @@ If a source cannot yet be located, mark the claim as requiring verification inst
 
 ## Quality checks
 
-Run:
+Install `requirements-dev.txt` in a Python 3.10+ virtual environment, then run:
 
 ```bash
-python3 scripts/quality_check.py
+.venv/bin/python -m unittest discover -s tests -v
+.venv/bin/python scripts/quality_check.py --strict
 ```
 
-The checker currently:
+The parser checks local links and heading anchors (including images and references), registry types and page evidence markers, H1 titles, evidence sections and navigation reachability. CI fails on both errors and warnings. It does not verify external URLs or certify factual claims. See `docs/maintenance.md`.
 
-- validates standard relative Markdown links;
-- validates `sources/source-map.json`;
-- warns about unresolved Obsidian wikilinks;
-- warns about duplicate H1 titles;
-- warns when numerically dense pages have no `来源与证据` section.
-
-Warnings represent migration debt; newly edited pages should avoid introducing additional warnings.
+Register every knowledge page in `sources/source-map.json`. Keep unresolved historical claims Unverified even after fixing links or definitions. Exact extraction markers and audit limitations are in `sources/claim-audit.md`.
 
 ## Repository structure
 

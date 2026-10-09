@@ -1,5 +1,7 @@
 # 抖音电商：智能客服与商品问答
 
+> **证据状态：Unverified。** 本页为历史整理，尚未逐条核验；公司实践、组件名称与精确指标均不能直接作为已证实事实或通用基准。见本页「来源与证据」。
+
 ## 是什么
 
 抖音电商 RAG 系统是为解决日均 500 万+用户咨询量而构建的
@@ -131,10 +133,18 @@ RAG 系统上线后，年节省成本超 2 亿元，
 
 ## 参见
 
-- [[../business-cases/business-cases]] — 业务落地案例主页面
-- [[../ops-and-reliability/full-stack-monitoring]] — 全链路监控体系
-- [[../ops-and-reliability/performance-testing]] — 性能压测实践
-- [[../ops-and-reliability/incident-response]] — 应急响应机制
-- [[../generation/generation]] — 生成层设计与优化
-- [[../retrieval/retrieval]] — 检索策略与实现
-- [[../indexing/indexing]] — 索引构建与优化
+- [业务落地案例](business-cases.md) — 业务落地案例主页面
+- [全链路监控体系](../ops-and-reliability/full-stack-monitoring.md) — 全链路监控体系
+- [性能压测实践](../ops-and-reliability/performance-testing.md) — 性能压测实践
+- [应急响应机制](../ops-and-reliability/incident-response.md) — 应急响应机制
+- [生成层设计与优化](../generation/generation.md) — 生成层设计与优化
+- [检索策略与实现](../retrieval/retrieval.md) — 检索策略与实现
+- [索引构建与优化](../indexing/indexing.md) — 索引构建与优化
+
+## 来源与证据
+
+- Evidence: Unverified
+- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
+- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
+- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
+- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)

@@ -1,2 +1,10 @@
 .claude/
 docs/superpowers/
+.venv/
+__pycache__/
+*.pyc
+_site/
+.bundle/
+vendor/
+node_modules/
+.build/
