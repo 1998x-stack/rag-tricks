@@ -37,36 +37,53 @@
       "reason": "包含大量精确指标、默认策略与业务实践结论。"
     },
     "wiki/introduction/bytedance-rag-applications.md": {
-      "status": "needs_verification",
+      "status": "partial",
       "source_refs": [
         "source-manual"
       ],
       "priority": "high",
-      "reason": "包含业务规模、QPS、NRT 延迟、内部组件名称等高风险 Claim。"
+      "reason": "ByteVectorDB/ByteLB/NRT 与四条业务线案例可在 OCR 页标 21-23、44-56 定位；页面中的概括性扩写仍按 synthesis 处理。",
+      "verified_at": "2026-09-29",
+      "source_page_ranges": [
+        "21-23",
+        "44-56"
+      ]
     },
     "wiki/ops-and-reliability/failure-postmortem.md": {
-      "status": "needs_verification",
+      "status": "partial",
       "source_refs": [
         "source-manual"
       ],
       "priority": "critical",
-      "reason": "包含精确事故日期、地点、影响、恢复时长与内部系统名称。"
+      "reason": "两起典型故障的时间、影响、根因、改进措施和效果可在 OCR 页标 113-116 定位；流程性与组织性扩写仍未逐句核验。",
+      "verified_at": "2026-09-29",
+      "source_page_ranges": [
+        "112-116"
+      ]
     },
     "wiki/cost-and-efficiency/cost-optimization.md": {
-      "status": "needs_verification",
+      "status": "partial",
       "source_refs": [
         "source-manual"
       ],
       "priority": "critical",
-      "reason": "包含精确成本、降本比例、资源利用率与系统配置数据。"
+      "reason": "ByteCost、成本优化策略及飞书 120 万→45 万/62.5% 案例可在 OCR 页标 81-86 定位；不将局部案例数字推广为通用 benchmark。",
+      "verified_at": "2026-09-29",
+      "source_page_ranges": [
+        "81-86"
+      ]
     },
     "wiki/advanced-topics/future-outlook.md": {
-      "status": "needs_verification",
+      "status": "partial",
       "source_refs": [
         "source-manual"
       ],
       "priority": "high",
-      "reason": "包含用户/企业规模、峰值 QPS、效果提升与内部组件体系描述。"
+      "reason": "10 亿用户/500 万企业、QPS≥20000、成本下降 70% 与多模态/智能化/低成本/高安全方向可在 OCR 页标 68-69 定位；技术组件表仍需逐项核验。",
+      "verified_at": "2026-09-29",
+      "source_page_ranges": [
+        "68-69"
+      ]
     },
     "wiki/architecture/overview.md": {
       "status": "needs_verification",
