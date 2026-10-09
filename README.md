@@ -14,12 +14,13 @@
 
 | 目标 | 推荐入口 |
 |---|---|
-| 系统学习 RAG | [学习路径](./index.md#学习路径) |
+| 系统学习 RAG | [Learning Path](./wiki/learning/learning-path.md) |
 | 设计一个生产 RAG 系统 | [系统架构](./wiki/architecture/architecture.md) |
 | 做上线与生产就绪检查 | [Production Readiness](./wiki/production/production-readiness.md) |
 | 排查检索/生成问题 | [问题排查入口](./index.md#问题排查入口) |
 | 建立评估与回归体系 | [Evaluation Center](./wiki/evaluation/evaluation.md) |
 | 做技术选型与权衡 | [Decision Center](./wiki/decisions/decision-center.md) |
+| 查术语与指标定义 | [RAG Glossary](./wiki/glossary/glossary.md) |
 | 查原始材料与证据状态 | [来源与证据规范](./SOURCE_POLICY.md) |
 
 ## 知识地图

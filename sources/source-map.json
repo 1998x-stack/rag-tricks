@@ -880,6 +880,30 @@
       "source_refs": [],
       "priority": "normal",
       "reason": "Benchmark 可复现性与上下文规范。"
+    },
+    "wiki/learning/learning-path.md": {
+      "status": "derived",
+      "source_refs": [],
+      "priority": "normal",
+      "reason": "面向公开读者的端到端学习路径。"
+    },
+    "wiki/learning/role-based-paths.md": {
+      "status": "derived",
+      "source_refs": [],
+      "priority": "normal",
+      "reason": "按工程角色组织的学习导航。"
+    },
+    "wiki/glossary/glossary.md": {
+      "status": "derived",
+      "source_refs": [],
+      "priority": "normal",
+      "reason": "仓库通用术语短定义与内部链接。"
+    },
+    "wiki/glossary/metrics-glossary.md": {
+      "status": "partial",
+      "source_refs": [],
+      "priority": "normal",
+      "reason": "基于 Evaluation Center 的指标定义汇总。"
     }
   }
 }
