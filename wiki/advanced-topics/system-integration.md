@@ -1,5 +1,7 @@
 # 业务系统深度集成
 
+> **证据状态：Unverified。** 本页为历史整理，尚未逐条核验；公司实践、组件名称与精确指标均不能直接作为已证实事实或通用基准。见本页「来源与证据」。
+
 ## 是什么
 
 业务系统深度集成是指将 RAG 系统与 CRM、ERP、客服系统等业务系统无缝对接，通过"标准化接口+数据打通+流程协同"三大手段，实现 RAG 从独立工具走向企业基础设施。字节跳动实现了各业务线 RAG 使用率提升至 90%，业务处理效率平均提升 55%。
@@ -86,9 +88,17 @@ RAG 系统独立运行时价值有限——用户需要离开业务系统到 RAG
 
 ## 参见
 
-- [[rag-agent]] — RAG-Agent 集成是更深层次的业务协同
-- [[privacy-security]] — 系统集成时权限体系的统一对接
-- [[../introduction/bytedance-rag-applications]] — 各业务线的集成实践
-- [[../ops-and-reliability/ops-and-reliability]] — 集成后的系统可靠性保障
-- [[../business-cases/business-cases]] — 业务落地案例中的集成经验
-- [[../generation/generation]] — 生成接口质量直接影响业务体验
+- [RAG 与 Agent 集成](rag-agent.md) — RAG-Agent 集成是更深层次的业务协同
+- [隐私安全增强](privacy-security.md) — 系统集成时权限体系的统一对接
+- [字节跳动业务线 RAG 应用现状](../introduction/bytedance-rag-applications.md) — 各业务线的集成实践
+- [系统运维与监控](../ops-and-reliability/ops-and-reliability.md) — 集成后的系统可靠性保障
+- [业务落地案例](../business-cases/business-cases.md) — 业务落地案例中的集成经验
+- [生成层设计与优化](../generation/generation.md) — 生成接口质量直接影响业务体验
+
+## 来源与证据
+
+- Evidence: Unverified
+- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
+- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
+- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
+- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)

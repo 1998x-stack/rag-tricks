@@ -1,5 +1,7 @@
 # 生成层设计
 
+> **证据状态：Unverified。** 本页为历史整理，尚未逐条核验；公司实践、组件名称与精确指标均不能直接作为已证实事实或通用基准。见本页「来源与证据」。
+
 ## 是什么
 
 生成层是 RAG 系统四层架构中的最顶层，负责将检索层返回的相关文档片段与原始问题一起输入语言模型，生成最终的回答。生成层是整个 RAG 流程的"最后一公里"——所有前序层的工作最终都要通过生成层呈现给用户，用户感知到的 RAG 系统质量就是生成层的输出质量。
@@ -74,8 +76,16 @@
 
 ## 参见
 
-- [[overview]] — 生成层在四层架构中的定位
-- [[retrieval-layer]] — 检索层产出的信息如何被生成层消费
-- [[../introduction/rag-basics]] — 生成步骤在 RAG 三步流程中的位置
-- [[../introduction/rag-vs-finetuning]] — Fine-tuning 作为生成层优化手段的考量
-- [[../../contradictory]] — 生成质量与推理成本的权衡
+- [整体架构概述](overview.md) — 生成层在四层架构中的定位
+- [检索层设计](retrieval-layer.md) — 检索层产出的信息如何被生成层消费
+- [RAG 基本原理](../introduction/rag-basics.md) — 生成步骤在 RAG 三步流程中的位置
+- [RAG vs Fine-tuning](../introduction/rag-vs-finetuning.md) — Fine-tuning 作为生成层优化手段的考量
+- [矛盾观点汇总](../../contradictory.md) — 生成质量与推理成本的权衡
+
+## 来源与证据
+
+- Evidence: Unverified
+- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
+- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
+- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
+- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)

@@ -1,5 +1,7 @@
 # RAG 与 Agent 集成
 
+> **证据状态：Unverified。** 本页为历史整理，尚未逐条核验；公司实践、组件名称与精确指标均不能直接作为已证实事实或通用基准。见本页「来源与证据」。
+
 ## 是什么
 
 RAG-Agent 集成将 RAG 作为智能体（Agent）的"外部知识库"，结合 Agent 的"任务规划→工具使用→反馈学习"能力，实现更复杂的业务任务自动化处理。Agent 接收复杂任务后拆解为子任务，针对每个子任务调用 RAG 系统检索相关信息，再整合检索结果完成最终任务输出。同时通过反馈学习形成"任务处理→信息支持→反馈优化"闭环。
@@ -49,9 +51,17 @@ Agent 可调用 RAG 系统提供的多个工具：
 
 ## 参见
 
-- [[multimodal-rag]] — 多模态能力让 Agent 能处理更丰富的任务类型
-- [[future-outlook]] — RAG-Agent 是未来四大发展方向之一
-- [[../retrieval/retrieval]] — RAG 检索是 Agent 的信息基础设施
-- [[../generation/generation]] — 生成层质量直接影响 Agent 任务输出
-- [[../introduction/bytedance-rag-applications]] — 各业务线的 RAG 应用场景是 Agent 集成的土壤
-- [[system-integration]] — 与业务系统集成是 Agent 落地的条件
+- [多模态 RAG](multimodal-rag.md) — 多模态能力让 Agent 能处理更丰富的任务类型
+- [总结与展望](future-outlook.md) — RAG-Agent 是未来四大发展方向之一
+- [检索策略与实现](../retrieval/retrieval.md) — RAG 检索是 Agent 的信息基础设施
+- [生成层设计与优化](../generation/generation.md) — 生成层质量直接影响 Agent 任务输出
+- [字节跳动业务线 RAG 应用现状](../introduction/bytedance-rag-applications.md) — 各业务线的 RAG 应用场景是 Agent 集成的土壤
+- [业务系统深度集成](system-integration.md) — 与业务系统集成是 Agent 落地的条件
+
+## 来源与证据
+
+- Evidence: Unverified
+- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
+- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
+- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
+- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)

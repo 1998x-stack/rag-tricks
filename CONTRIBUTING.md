@@ -34,7 +34,7 @@
 
 重要导航使用标准 Markdown 链接，例如 `[混合检索](./wiki/retrieval/hybrid-retrieval.md)`。
 
-正文知识网络可以继续使用 Obsidian `[[hybrid-retrieval]]`，但不要假设 GitHub Pages 的 Jekyll Cayman 会自动渲染 wikilink。
+正文同样使用标准 Markdown 相对链接。检查器对有效 wikilink 提示网页兼容 warning，对失效或歧义 wikilink 报错；严格 CI 均不接受。代码中的语法示例不受此限制。
 
 ## 推荐页面 frontmatter
 
@@ -42,19 +42,18 @@
 
 ## 本地质量检查
 
-使用 Python 3：
+使用 Python 3.10+，按 [README](README.md#质量保障) 安装依赖，执行：
 
-    python3 scripts/quality_check.py
+```bash
+.venv/bin/python -m unittest discover -s tests -v
+.venv/bin/python scripts/quality_check.py --strict
+```
 
-检查器会：
+所有 `wiki/` 页面与 `contradictory.md` 必须登记到 `sources/source-map.json`，并包含「来源与证据」章节。`needs_verification`、`derived`、`external` 状态分别对应正文的 `Evidence: Unverified`、`Evidence: Derived`、`Evidence: External`。不要用补登记代替事实核验。
 
-- 阻止失效的标准 Markdown 相对文件链接；
-- 校验 `sources/source-map.json`；
-- 提示未解析 wikilink；
-- 提示重复 H1；
-- 提示含大量精确数字但没有“来源与证据”章节的页面。
+新增页面必须能从 README 或 index 的链接路径抵达；同时检查新增标题锚点。检查器只验证本地链接，外部来源需人工查阅。检查范围与限制见[维护说明](docs/maintenance.md)。
 
-现有历史债务以 warning 为主；新增内容不应继续扩大 warning 数量。
+CI 对所有错误与 warning 执行严格门禁；历史事实核验债务单独通过证据状态统计。
 
 ## PR 建议
 

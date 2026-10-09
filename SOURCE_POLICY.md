@@ -109,7 +109,7 @@
 
 ## source-map
 
-`sources/source-map.json` 用于登记需要重点核验的页面。
+`sources/source-map.json` 登记全部知识页，提供证据状态清单。新页面必须登记，历史页保留未核验状态。
 
 状态定义：
 
@@ -119,7 +119,7 @@
 - `derived`：页面主要是工程推导；
 - `external`：页面主要依赖外部来源。
 
-source-map 是迁移工具，不取代正文中的具体引用。
+source-map 不取代正文中的具体引用。检查器验证登记类型、引用存在性与正文状态标记，但不验证事实。局部 Claim 的定位与限制见[抽样审计记录](sources/claim-audit.md)。
 
 ## 版权与再分发
 

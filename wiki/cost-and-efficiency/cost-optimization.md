@@ -79,9 +79,17 @@ RAG 系统规模化后成本呈线性甚至超线性增长。若不主动优化�
 
 ## 参见
 
-- [[cost-breakdown]] — 成本拆解是优化策略的前提
-- [[cost-monitoring]] — 优化效果需要持续监控验证
-- [[efficiency-optimization]] — 来自 Ch9 的极致效率优化方向
-- [[../indexing/vector-database]] — 向量数据库选型直接影响存储和检索成本
-- [[../generation/generation]] — 生成层模型选型与优化
-- [[../../contradictory]] — 精度与成本、质量与效率的多组权衡
+- [成本构成与拆解](cost-breakdown.md) — 成本拆解是优化策略的前提
+- [成本监控与归因](cost-monitoring.md) — 优化效果需要持续监控验证
+- [效率极致优化](efficiency-optimization.md) — 来自 Ch9 的极致效率优化方向
+- [向量数据库构建与管理](../indexing/vector-database.md) — 向量数据库选型直接影响存储和检索成本
+- [生成层设计与优化](../generation/generation.md) — 生成层模型选型与优化
+- [矛盾观点汇总](../../contradictory.md) — 精度与成本、质量与效率的多组权衡
+
+## 来源与证据
+
+- Evidence: Unverified
+- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
+- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
+- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
+- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)
