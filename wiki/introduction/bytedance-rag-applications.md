@@ -75,9 +75,17 @@
 
 ## 参见
 
-- [[rag-basics]] — RAG 三步流程的核心原理
-- [[../architecture/overview]] — RAG 系统四层架构设计
-- [[../architecture/retrieval-layer]] — 检索层中的多级过滤和负载均衡策略
-- [[../architecture/index-layer]] — 索引层中的多粒度向量生成策略
-- [[rag-vs-finetuning]] — 不同业务场景下的技术选型考量
-- [[../../contradictory]] — 通用方案与业务定制的张力
+- [RAG 基本原理](rag-basics.md) — RAG 三步流程的核心原理
+- [整体架构概述](../architecture/overview.md) — RAG 系统四层架构设计
+- [检索层设计](../architecture/retrieval-layer.md) — 检索层中的多级过滤和负载均衡策略
+- [索引层设计](../architecture/index-layer.md) — 索引层中的多粒度向量生成策略
+- [RAG vs Fine-tuning](rag-vs-finetuning.md) — 不同业务场景下的技术选型考量
+- [矛盾观点汇总](../../contradictory.md) — 通用方案与业务定制的张力
+
+## 来源与证据
+
+- Evidence: Unverified
+- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
+- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
+- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
+- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)

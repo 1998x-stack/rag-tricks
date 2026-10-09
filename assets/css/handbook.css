@@ -1,0 +1,37 @@
+:root { --ink: #183341; --teal: #236c72; --paper: #fbfcfa; --rule: #dbe4df; }
+body { color: var(--ink); background: var(--paper); }
+.page-header { background: #102b3b; background-image: none; padding: 2.7rem 1.5rem 2.2rem; }
+.project-name { font-family: "Avenir Next", "PingFang SC", sans-serif; font-size: 2.2rem; letter-spacing: -.025em; }
+.project-tagline { font-size: 1rem; color: #c1d8d1; opacity: 1; margin: .8rem 0 1.1rem; }
+.page-header .btn { margin-bottom: 0; font-size: .8rem; }
+.main-content { max-width: 72rem; padding: 0 4rem 2rem; font-size: 1.05rem; }
+.main-content h1, .main-content h2, .main-content h3 { color: var(--teal); }
+.main-content a { color: #226577; }
+.handbook-nav { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--rule); background: var(--paper); }
+.handbook-brand { font-family: "Avenir Next", sans-serif; font-weight: 700; letter-spacing: .1em; font-size: .8rem; white-space: nowrap; }
+.handbook-nav-links { display: flex; gap: 1.2rem; font-size: .85rem; }
+.handbook-nav a[aria-current="page"] { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .4rem; }
+.handbook-article { padding-top: 1rem; line-height: 1.8; }
+.handbook-article :is(h1,h2,h3,h4) { scroll-margin-top: 6rem; }
+.handbook-toc { margin: 1.6rem 0 2rem; padding: .85rem 1.2rem; border: 1px solid var(--rule); border-left: 3px solid #74a794; background: #f0f5f1; }
+.handbook-toc summary { cursor: pointer; font-size: .9rem; font-weight: 600; }
+.handbook-toc ol { margin: .9rem 0 .2rem; padding-left: 1.3rem; columns: 2; column-gap: 2rem; }
+.handbook-toc li { font-size: .88rem; break-inside: avoid; padding: .15rem 0; }
+.reading-footer { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1.4rem; font-size: .9rem; }
+a:focus-visible, summary:focus-visible { outline: 3px solid #ac7641; outline-offset: 4px; }
+@media (max-width: 640px) {
+  .page-header { padding: 1.8rem 1rem; }
+  .project-name { font-size: 1.6rem; text-wrap: balance; }
+  .main-content { padding: 0 1rem 1.5rem; }
+  .handbook-nav { display: block; padding: .75rem 0; }
+  .handbook-brand { display: block; margin-bottom: .6rem; }
+  .handbook-nav-links { justify-content: space-between; gap: .5rem; font-size: .78rem; }
+  .handbook-toc ol { columns: 1; }
+  .handbook-article :is(h1,h2,h3,h4) { scroll-margin-top: 7rem; }
+}
+@media print {
+  .handbook-nav, .handbook-toc, .reading-footer, .page-header .btn { display: none; }
+  .page-header { color: #183341; background: white; padding: 1rem; }
+  .project-tagline { color: #183341; }
+  .main-content { max-width: none; padding: 0; }
+}

@@ -1,5 +1,7 @@
 # Prompt Engineering 实践
 
+> **证据状态：Unverified。** 本页为历史整理，尚未逐条核验；公司实践、组件名称与精确指标均不能直接作为已证实事实或通用基准。见本页「来源与证据」。
+
 ## 是什么
 
 Prompt Engineering（提示工程）是设计结构化指令来引导语言模型生成符合预期回答的技术实践。在 RAG 系统中，提示工程充当着"检索信息"与"生成模型"之间的关键桥梁。字节跳动通过**标准化提示模板设计**、**动态提示优化策略**以及**模板库复用机制**，让模型更高效地利用检索信息，生成符合业务场景的高质量回答。
@@ -66,7 +68,15 @@ Prompt Engineering（提示工程）是设计结构化指令来引导语言模�
 
 ## 参见
 
-- [[model-selection]] — 提示工程与模型能力需配合调整
-- [[generation-quality]] — 提示模板中嵌入了质量控制的约束指令
-- [[../retrieval/query-understanding]] — 查询-信息对齐提示依赖查询理解的结果
-- [[../retrieval/retrieval-trigger]] — 条件触发中的 LLM 意图判断也依赖提示工程
+- [语言模型选型与适配](model-selection.md) — 提示工程与模型能力需配合调整
+- [生成结果质量控制](generation-quality.md) — 提示模板中嵌入了质量控制的约束指令
+- [查询理解增强](../retrieval/query-understanding.md) — 查询-信息对齐提示依赖查询理解的结果
+- [检索触发策略](../retrieval/retrieval-trigger.md) — 条件触发中的 LLM 意图判断也依赖提示工程
+
+## 来源与证据
+
+- Evidence: Unverified
+- 整理来源：《字节跳动 RAG 实践手册》及历史扩写，尚未区分逐条来源与推导。
+- 核验范围：未完成逐条原文定位；数字的测量条件、组织级结论及案例真实性仍待确认。
+- 使用边界：可作为问题清单，不可直接引用为生产指标、选型结论或已验证事故记录。
+- [来源规范](../../SOURCE_POLICY.md) · [核验登记](../../sources/source-map.json)
